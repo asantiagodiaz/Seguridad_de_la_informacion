@@ -1,0 +1,225 @@
+---- ExifTool ----
+ExifTool Version Number         : 13.55
+---- System ----
+File Name                       : foto_correo.jpeg
+Directory                       : .
+File Size                       : 4.6 MB
+File Modification Date/Time     : 2026:08:28 21:04:55-04:00
+File Access Date/Time           : 2026:08:28 21:05:09-04:00
+File Inode Change Date/Time     : 2026:08:28 21:04:55-04:00
+File Permissions                : -rwxrwx---
+---- File ----
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Image Width                     : 5712
+Image Height                    : 4284
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+---- JFIF ----
+JFIF Version                    : 1.01
+Resolution Unit                 : inches
+X Resolution                    : 300
+Y Resolution                    : 300
+---- IFD0 ----
+Make                            : Apple
+Camera Model Name               : iPhone 17
+Orientation                     : Rotate 90 CW
+X Resolution                    : 72
+Y Resolution                    : 72
+Resolution Unit                 : inches
+Software                        : 26.6.1
+Modify Date                     : 2026:08:28 19:32:31
+Host Computer                   : iPhone 17
+Y Cb Cr Positioning             : Centered
+---- ExifIFD ----
+Exposure Time                   : 1/30
+F Number                        : 1.6
+Exposure Program                : Program AE
+ISO                             : 640
+Exif Version                    : 0232
+Date/Time Original              : 2026:08:28 19:32:31
+Create Date                     : 2026:08:28 19:32:31
+Offset Time                     : -05:00
+Offset Time Original            : -05:00
+Offset Time Digitized           : -05:00
+Components Configuration        : Y, Cb, Cr, -
+Shutter Speed Value             : 1/30
+Aperture Value                  : 1.6
+Brightness Value                : -1.00829883
+Exposure Compensation           : 0
+Metering Mode                   : Multi-segment
+Flash                           : Off, Did not fire
+Focal Length                    : 6.0 mm
+Subject Area                    : 2853 2140 3142 1881
+Sub Sec Time Original           : 930
+Sub Sec Time Digitized          : 930
+Flashpix Version                : 0100
+Color Space                     : Uncalibrated
+Exif Image Width                : 5712
+Exif Image Height               : 4284
+Sensing Method                  : One-chip color area
+Scene Type                      : Directly photographed
+Exposure Mode                   : Auto
+White Balance                   : Auto
+Focal Length In 35mm Format     : 26 mm
+Scene Capture Type              : Standard
+Lens Info                       : 2.220000029-5.960000038mm f/1.6-2.2
+Lens Make                       : Apple
+Lens Model                      : iPhone 17 back dual wide camera 5.96mm f/1.6
+Composite Image                 : General Composite Image
+---- Apple ----
+Maker Note Version              : 16
+Run Time Flags                  : Valid
+Run Time Value                  : 111671844540875
+Run Time Scale                  : 1000000000
+Run Time Epoch                  : 0
+AE Stable                       : Yes
+AE Target                       : 154
+AE Average                      : 158
+AF Stable                       : Yes
+Acceleration Vector             : -0.01023416408 -0.8280773757 -0.5464175942
+Focus Distance Range            : 0.30 - 1.11 m
+Apple 0x000d                    : -8
+Apple 0x000e                    : 0
+Apple 0x0010                    : 1
+Image Capture Type              : Scene
+Apple 0x0016                    : bplist00_..AZZROenMrlgDARQrvpicTAR+OUop...[...]
+Live Photo Video Index          : 8594137124
+Image Processing Flags          : [13], [17], [21]
+Quality Hint                    : q750n
+Photos App Feature Flags        : 0
+Image Capture Request ID        : D7947D51-0B74-4B68-B673-1C2E836E9BD4
+HDR Headroom                    : 1.00999999
+AF Performance                  : 19 1 34
+Scene Flags                     : [2], [3], [7], [10], [12], [20], [21], [23]
+Signal To Noise Ratio Type      : 3
+Signal To Noise Ratio           : 29.29106139
+Photo Identifier                : 50F9BB4C-B607-46BF-86A0-461D5D57E5BA
+Color Temperature               : 3550
+Camera Type                     : Back Normal
+Focus Position                  : 157
+HDR Gain                        : 1.908789038
+Apple 0x0036                    : 37
+Apple 0x0037                    : 8
+Apple 0x003a                    : 128
+Apple 0x003b                    : 0
+Apple 0x003c                    : 4
+Green Ghost Mitigation Status   : 0
+Apple 0x0043                    : 0
+Apple 0x0044                    : 0
+Apple 0x0045                    : 0
+Apple 0x0046                    : 0
+Apple 0x004a                    : 2
+Apple 0x004d                    : 39.63848878
+Apple 0x004e                    : {_1=3,_2=[],_3=1}
+Apple 0x004f                    : 0
+Apple 0x0052                    : -2
+Apple 0x0053                    : 1
+Apple 0x0054                    : {_0=1,_1=0,_2=0,_3=1,_4=1,_5=1,_6=4,_7=0}
+Apple 0x0055                    : 0
+Apple 0x0058                    : 2308
+Apple 0x005a                    : {_0=1,_1=0,_2=0,_3=0.0315266214311123,_4=0.62667042016983}
+Apple 0x0060                    : 35310
+Apple 0x0061                    : 26
+---- GPS ----
+GPS Latitude Ref                : North
+GPS Latitude                    : 4 deg 38' 28.10"
+GPS Longitude Ref               : West
+GPS Longitude                   : 74 deg 3' 50.33"
+GPS Altitude Ref                : Above Sea Level
+GPS Altitude                    : 2580.178761 m
+GPS Time Stamp                  : 00:32:30
+GPS Speed Ref                   : km/h
+GPS Speed                       : 0
+GPS Img Direction Ref           : True North
+GPS Img Direction               : 251.8843691
+GPS Dest Bearing Ref            : True North
+GPS Dest Bearing                : 251.8843691
+GPS Date Stamp                  : 2026:08:29
+GPS Horizontal Positioning Error: 16.38015723 m
+---- IFD1 ----
+Compression                     : JPEG (old-style)
+X Resolution                    : 72
+Y Resolution                    : 72
+Resolution Unit                 : inches
+Thumbnail Offset                : 3188
+Thumbnail Length                : 8697
+Thumbnail Image                 : (Binary data 8697 bytes, use -b option to extract)
+---- MPF0 ----
+MPF Version                     : 0100
+Number Of Images                : 2
+---- MPImage1 ----
+MP Image Flags                  : (none)
+MP Image Format                 : JPEG
+MP Image Type                   : Baseline MP Primary Image
+MP Image Length                 : 4157038
+MP Image Start                  : 0
+Dependent Image 1 Entry Number  : 0
+Dependent Image 2 Entry Number  : 0
+---- MPImage2 ----
+MP Image Flags                  : (none)
+MP Image Format                 : JPEG
+MP Image Type                   : Undefined
+MP Image Length                 : 487071
+MP Image Start                  : 4157038
+Dependent Image 1 Entry Number  : 0
+Dependent Image 2 Entry Number  : 0
+MP Image 2                      : (Binary data 487071 bytes, use -b option to extract)
+---- APP2 ----
+Uniform Resource Name           : urn:iso:std:iso:ts:21496:-1
+---- ICC-header ----
+Profile CMM Type                : Apple Computer Inc.
+Profile Version                 : 4.0.0
+Profile Class                   : Display Device Profile
+Color Space Data                : RGB
+Profile Connection Space        : XYZ
+Profile Date Time               : 2022:01:01 00:00:00
+Profile File Signature          : acsp
+Primary Platform                : Apple Computer Inc.
+CMM Flags                       : Not Embedded, Independent
+Device Manufacturer             : Apple Computer Inc.
+Device Model                    : 
+Device Attributes               : Reflective, Glossy, Positive, Color
+Rendering Intent                : Perceptual
+Connection Space Illuminant     : 0.9642 1 0.82491
+Profile Creator                 : Apple Computer Inc.
+Profile ID                      : 0
+---- ICC_Profile ----
+Profile Description             : Display P3
+Profile Copyright               : Copyright Apple Inc., 2022
+Media White Point               : 0.96419 1 0.82489
+Red Matrix Column               : 0.51512 0.2412 -0.00105
+Green Matrix Column             : 0.29198 0.69225 0.04189
+Blue Matrix Column              : 0.1571 0.06657 0.78407
+Red Tone Reproduction Curve     : (Binary data 32 bytes, use -b option to extract)
+Chromatic Adaptation            : 1.04788 0.02292 -0.0502 0.02959 0.99048 -0.01706 -0.00923 0.01508 0.75168
+Blue Tone Reproduction Curve    : (Binary data 32 bytes, use -b option to extract)
+Green Tone Reproduction Curve   : (Binary data 32 bytes, use -b option to extract)
+---- AROT ----
+HDR Gain Curve Size             : 267
+HDR Gain Curve                  : (Binary data 2067 bytes, use -b option to extract)
+---- Composite ----
+Run Time Since Power Up         : 1 days 7:01:12
+Aperture                        : 1.6
+Image Size                      : 5712x4284
+Megapixels                      : 24.5
+Scale Factor To 35 mm Equivalent: 4.4
+Shutter Speed                   : 1/30
+Create Date                     : 2026:08:28 19:32:31.930-05:00
+Date/Time Original              : 2026:08:28 19:32:31.930-05:00
+Modify Date                     : 2026:08:28 19:32:31-05:00
+GPS Altitude                    : 2580.1 m Above Sea Level
+GPS Date/Time                   : 2026:08:29 00:32:30Z
+GPS Latitude                    : 4 deg 38' 28.10" N
+GPS Longitude                   : 74 deg 3' 50.33" W
+Circle Of Confusion             : 0.007 mm
+Field Of View                   : 69.4 deg
+Focal Length 35mm Equiv         : 6.0 mm (35 mm equivalent: 26.0 mm)
+GPS Position                    : 4 deg 38' 28.10" N, 74 deg 3' 50.33" W
+Hyperfocal Distance             : 3.22 m
+Light Value                     : 3.6
+Lens ID                         : iPhone 17 back dual wide camera 5.96mm f/1.6

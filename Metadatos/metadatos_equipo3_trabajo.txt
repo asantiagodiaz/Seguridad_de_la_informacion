@@ -1,0 +1,130 @@
+---- ExifTool ----
+ExifTool Version Number         : 13.55
+---- System ----
+File Name                       : documento_equipo3_trabajo.docx
+Directory                       : .
+File Size                       : 14 kB
+File Modification Date/Time     : 2026:08:29 03:11:50-04:00
+File Access Date/Time           : 2026:08:29 03:14:37-04:00
+File Inode Change Date/Time     : 2026:08:29 03:11:50-04:00
+File Permissions                : -rwxrwx---
+---- File ----
+File Type                       : DOCX
+File Type Extension             : docx
+MIME Type                       : application/vnd.openxmlformats-officedocument.wordprocessingml.document
+---- ZIP ----
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x6cd2a4df
+Zip Compressed Size             : 346
+Zip Uncompressed Size           : 1312
+Zip File Name                   : [Content_Types].xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0xb71a911e
+Zip Compressed Size             : 239
+Zip Uncompressed Size           : 590
+Zip File Name                   : _rels/.rels
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x52a14ce5
+Zip Compressed Size             : 1220
+Zip Uncompressed Size           : 8041
+Zip File Name                   : word/document.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x51b364d6
+Zip Compressed Size             : 244
+Zip Uncompressed Size           : 817
+Zip File Name                   : word/_rels/document.xml.rels
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x5dbc437b
+Zip Compressed Size             : 1741
+Zip Uncompressed Size           : 8399
+Zip File Name                   : word/theme/theme1.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0xa45efc85
+Zip Compressed Size             : 1153
+Zip Uncompressed Size           : 3414
+Zip File Name                   : word/settings.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x4ee6a7a7
+Zip Compressed Size             : 4141
+Zip Uncompressed Size           : 42981
+Zip File Name                   : word/styles.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x48fade26
+Zip Compressed Size             : 367
+Zip Uncompressed Size           : 1069
+Zip File Name                   : word/webSettings.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x45753e56
+Zip Compressed Size             : 549
+Zip Uncompressed Size           : 2097
+Zip File Name                   : word/fontTable.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x0545e58c
+Zip Compressed Size             : 373
+Zip Uncompressed Size           : 765
+Zip File Name                   : docProps/core.xml
+Zip Required Version            : 20
+Zip Bit Flag                    : 0x0006
+Zip Compression                 : Deflated
+Zip Modify Date                 : 1980:01:01 00:00:00
+Zip CRC                         : 0x86d5f2ef
+Zip Compressed Size             : 366
+Zip Uncompressed Size           : 709
+Zip File Name                   : docProps/app.xml
+---- XMP-dc ----
+Title                           : 
+Subject                         : 
+Creator                         : Jefferson Gutierrez
+Description                     : 
+---- XML ----
+Keywords                        : 
+Last Modified By                : Jefferson Gutierrez
+Revision Number                 : 2
+Create Date                     : 2026:08:29 07:05:00Z
+Modify Date                     : 2026:08:29 07:05:00Z
+Template                        : Normal
+Total Edit Time                 : 1 minute
+Pages                           : 1
+Words                           : 36
+Characters                      : 201
+Application                     : Microsoft Office Word
+Doc Security                    : None
+Lines                           : 1
+Paragraphs                      : 1
+Scale Crop                      : No
+Company                         : 
+Links Up To Date                : No
+Characters With Spaces          : 236
+Shared Doc                      : No
+Hyperlinks Changed              : No
+App Version                     : 16.0000
